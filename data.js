@@ -3,25 +3,25 @@
 const destinationsData = [
   {
     id: "dest-1",
-    name: "Australia",
+    name: "Austràlia",
     properties_count: 2245,
     image_url: "assets/dest-australia.png"
   },
   {
     id: "dest-2",
-    name: "Japan",
+    name: "Japó",
     properties_count: 1278,
     image_url: "assets/dest-japan.png"
   },
   {
     id: "dest-3",
-    name: "New Zealand",
+    name: "Nova Zelanda",
     properties_count: 480,
     image_url: "assets/dest-newzealand.png"
   },
   {
     id: "dest-4",
-    name: "Greece",
+    name: "Grècia",
     properties_count: 320,
     image_url: "assets/dest-greece.png"
   }
@@ -30,20 +30,20 @@ const destinationsData = [
 const inspirationsData = [
   {
     id: "insp-1",
-    title: "Sydney's 10 most fashionable 5 star hotels",
-    description: "Browse the fastest growing tourism sector in the heart of Australia's vibrant coastal capital...",
+    title: "Els 10 hotels de 5 estrelles més de moda a Sydney",
+    description: "Descobreix el sector turístic amb més creixement al cor de la vibrant capital costanera d'Austràlia...",
     image_url: "assets/insp-sydney.png"
   },
   {
     id: "insp-2",
-    title: "Top cities for Vegan Travellers",
-    description: "Top sites where you do not have to worry about being a vegan. Our pocket guide is here...",
+    title: "Les millors ciutats per a viatgers vegans",
+    description: "Els millors llocs on no t'has de preocupar per ser vegà. La nostra guia de butxaca és aquí...",
     image_url: "assets/insp-vegan.png"
   },
   {
     id: "insp-3",
-    title: "World's top destinations during and post covid timeline",
-    description: "Pandemic safe travel, road trips and destinations offering high safety standards and clean air...",
+    title: "Les principals destinacions del món durant i després de la COVID-19",
+    description: "Viatges assegurats contra la pandèmia, viatges per carretera i destinacions que ofereixen alts estàndards de seguretat i aire pur...",
     image_url: "assets/insp-world.png"
   }
 ];
@@ -52,7 +52,7 @@ const hotelsData = [
   {
     id: "hotel-1",
     name: "Lakeside Resort & Cabins",
-    location: "Queenstown, New Zealand",
+    location: "Queenstown, Nova Zelanda",
     price_per_night: 180,
     rating: 4.8,
     reviews_count: 124,
@@ -61,7 +61,7 @@ const hotelsData = [
   {
     id: "hotel-2",
     name: "Chiba Onsen & Spa",
-    location: "Tokyo, Japan",
+    location: "Tòquio, Japó",
     price_per_night: 240,
     rating: 4.9,
     reviews_count: 89,
@@ -70,7 +70,7 @@ const hotelsData = [
   {
     id: "hotel-3",
     name: "Santorini Heights Cave Suites",
-    location: "Imerovigli, Greece",
+    location: "Imerovigli, Grècia",
     price_per_night: 320,
     rating: 4.7,
     reviews_count: 215,
@@ -79,7 +79,7 @@ const hotelsData = [
   {
     id: "hotel-4",
     name: "The Darling Hotel & Suites",
-    location: "Sydney, Australia",
+    location: "Sydney, Austràlia",
     price_per_night: 290,
     rating: 4.9,
     reviews_count: 310,

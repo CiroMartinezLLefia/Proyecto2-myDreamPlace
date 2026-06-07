@@ -43,29 +43,29 @@ CREATE TABLE IF NOT EXISTS hotels (
 -- Seed Destinations
 INSERT INTO destinations (id, name, properties_count, image_url)
 VALUES 
-  ('dest-1', 'Australia', 2245, 'assets/dest-australia.png'),
-  ('dest-2', 'Japan', 1278, 'assets/dest-japan.png'),
-  ('dest-3', 'New Zealand', 480, 'assets/dest-newzealand.png'),
-  ('dest-4', 'Greece', 320, 'assets/dest-greece.png')
+  ('dest-1', 'Austràlia', 2245, 'assets/dest-australia.png'),
+  ('dest-2', 'Japó', 1278, 'assets/dest-japan.png'),
+  ('dest-3', 'Nova Zelanda', 480, 'assets/dest-newzealand.png'),
+  ('dest-4', 'Grècia', 320, 'assets/dest-greece.png')
 ON CONFLICT (id) DO UPDATE 
 SET name = EXCLUDED.name, properties_count = EXCLUDED.properties_count, image_url = EXCLUDED.image_url;
 
 -- Seed Inspirations
 INSERT INTO inspirations (id, title, description, image_url)
 VALUES
-  ('insp-1', 'Sydney''s 10 most fashionable 5 star hotels', 'Browse the fastest growing tourism sector in the heart of Australia''s vibrant coastal capital...', 'assets/insp-sydney.png'),
-  ('insp-2', 'Top cities for Vegan Travellers', 'Top sites where you do not have to worry about being a vegan. Our pocket guide is here...', 'assets/insp-vegan.png'),
-  ('insp-3', 'World''s top destinations during and post covid timeline', 'Pandemic safe travel, road trips and destinations offering high safety standards and clean air...', 'assets/insp-world.png')
+  ('insp-1', 'Els 10 hotels de 5 estrelles més de moda a Sydney', 'Descobreix el sector turístic amb més creixement al cor de la vibrant capital costanera d''Austràlia...', 'assets/insp-sydney.png'),
+  ('insp-2', 'Les millors ciutats per a viatgers vegans', 'Els millors llocs on no t''has de preocupar per ser vegà. La nostra guia de butxaca és aquí...', 'assets/insp-vegan.png'),
+  ('insp-3', 'Les principals destinacions del món durant i després de la COVID-19', 'Viatges assegurats contra la pandèmia, viatges per carretera i destinacions que ofereixen alts estàndards de seguretat i aire pur...', 'assets/insp-world.png')
 ON CONFLICT (id) DO UPDATE 
 SET title = EXCLUDED.title, description = EXCLUDED.description, image_url = EXCLUDED.image_url;
 
 -- Seed Hotels
 INSERT INTO hotels (id, name, location, price_per_night, rating, reviews_count, image_url)
 VALUES
-  ('hotel-1', 'Lakeside Resort & Cabins', 'Queenstown, New Zealand', 180, 4.8, 124, 'assets/hotel-1.png'),
-  ('hotel-2', 'Chiba Onsen & Spa', 'Tokyo, Japan', 240, 4.9, 89, 'assets/hotel-2.png'),
-  ('hotel-3', 'Santorini Heights Cave Suites', 'Imerovigli, Greece', 320, 4.7, 215, 'assets/hotel-3.png'),
-  ('hotel-4', 'The Darling Hotel & Suites', 'Sydney, Australia', 290, 4.9, 310, 'assets/hotel-1.png')
+  ('hotel-1', 'Lakeside Resort & Cabins', 'Queenstown, Nova Zelanda', 180, 4.8, 124, 'assets/hotel-1.png'),
+  ('hotel-2', 'Chiba Onsen & Spa', 'Tòquio, Japó', 240, 4.9, 89, 'assets/hotel-2.png'),
+  ('hotel-3', 'Santorini Heights Cave Suites', 'Imerovigli, Grècia', 320, 4.7, 215, 'assets/hotel-3.png'),
+  ('hotel-4', 'The Darling Hotel & Suites', 'Sydney, Austràlia', 290, 4.9, 310, 'assets/hotel-1.png')
 ON CONFLICT (id) DO UPDATE 
 SET name = EXCLUDED.name, location = EXCLUDED.location, price_per_night = EXCLUDED.price_per_night, rating = EXCLUDED.rating, reviews_count = EXCLUDED.reviews_count, image_url = EXCLUDED.image_url;
 
