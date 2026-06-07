@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Ciro Martínez - Desarrollador de Aplicaciones Web y Técnico de Sistemas. Currículum Vitae.">
+  <title>Ciro Martínez | CV Resume</title>
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+  <!-- Back to portal button -->
+  <a href="../index.html" class="back-to-portal-btn" aria-label="Tornar al portal myDreamPlace" style="position: fixed; top: 20px; left: 20px; z-index: 999; background-color: var(--card-bg, #fff); color: var(--text-color, #333); border: 1.5px solid var(--border-color, #ddd); padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); text-decoration: none; transition: all 0.2s ease;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon" style="width: 16px; height: 16px; margin-right: 6px;">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Tornar al Portal
+  </a>
+
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+    <!-- Sun Icon -->
+    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <!-- Moon Icon -->
+    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-container">
+      <div class="profile-wrapper">
+        <div class="avatar-container">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQFOI7R6fLNGTA/profile-displayphoto-crop_800_800/B4DZ1xoXcaJ0AI-/0/1775727902928?e=1782345600&v=beta&t=O9kepWD-1F_JpWooF5ogOSfDzWNdFzmor9Wq86MqVUI"
+            alt="Ciro Martínez" class="profile-img">
+          <!-- Circular text SVG overlay -->
+          <svg class="circular-text" viewBox="0 0 100 100">
+            <defs>
+              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1, 1 74,0 a 37,37 0 1, 1 -74,0"></path>
+            </defs>
+            <text>
+              <textPath href="#circlePath">
+                NICE TO MEET YOU • NICE TO MEET YOU • NICE TO MEET YOU •
+              </textPath>
+            </text>
+          </svg>
+        </div>
+      </div>
+      <div class="header-text">
+        <span class="role-subtitle">DESARROLLADOR DE APLICACIONES WEB</span>
+        <h1 class="main-title">Ciro Martínez</h1>
+        <a href="#contact" class="btn-contact">CONTACTAR</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout Container -->
+  <div class="layout-container">
+    <div class="grid-content">
+
+      <!-- Main Content (Sobre mí, Experiencia, Formación) -->
+      <main class="main-content">
+        <!-- Sobre mí Section -->
+        <section class="section about-section">
+          <h2 class="section-title">Sobre mí</h2>
+          <p class="paragraph">
+            Soy un estudiante de Desarrollo de Aplicaciones Web con un grado medio en Sistemas Microinformáticos y
+            Redes. Destaco en la programación, administración de redes y mantenimiento de hardware. Tengo un sólido
+            dominio del inglés y fuertes habilidades interpersonales en trabajo en equipo y resolución de problemas.
+          </p>
+        </section>
+
+        <div class="teal-divider"></div>
+
+        <!-- Experiencia Section -->
+        <section class="section experience-section">
+          <h2 class="section-title">Experiencia</h2>
+
+          <div class="timeline">
+            <!-- Job 1 -->
+            <article class="timeline-item">
+              <header class="timeline-header">
+                <h3 class="job-title">TÉCNICO DE SOPORTE INFORMÁTICO — HERFRI SL</h3>
+                <span class="job-date">Ene. 2024 - Jun. 2024</span>
+              </header>
+              <p class="job-subtitle-detail">Becario en Prácticas (400h) | Badalona</p>
+              <ul class="job-bullets">
+                <li>Realicé tareas de mantenimiento y reparación de hardware.</li>
+                <li>Gestioné la configuración y administración de redes locales.</li>
+                <li>Instalé y actualicé software en diversos equipos.</li>
+                <li>Proporcioné soporte técnico a usuarios, resolviendo incidencias relacionadas con equipos y redes.
+                </li>
+                <li>Participé en la configuración de sistemas operativos y en la gestión de copias de seguridad.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <div class="teal-divider"></div>
+
+        <!-- Formación Section -->
+        <section class="section education-section">
+          <h2 class="section-title">Formación</h2>
+
+          <div class="timeline">
+            <!-- Education 1 -->
+            <article class="education-item">
+              <header class="timeline-header">
+                <h3 class="job-title">TÉCNICO DE DESARROLLO DE APLICACIONES WEB</h3>
+                <span class="job-date">2024 - Actualidad</span>
+              </header>
+              <p class="job-subtitle-detail">FP Llefià | Badalona</p>
+            </article>
+
+            <!-- Education 2 -->
+            <article class="education-item">
+              <header class="timeline-header">
+                <h3 class="job-title">TÉCNICO DE SISTEMAS MICROINFORMÁTICOS Y REDES</h3>
+                <span class="job-date">2022 - 2023</span>
+              </header>
+              <p class="job-subtitle-detail">FP Llefià | Badalona</p>
+            </article>
+
+            <!-- Education 3 -->
+            <article class="education-item">
+              <header class="timeline-header">
+                <h3 class="job-title">GRADUADO EN EDUCACIÓN SECUNDARIA OBLIGATORIA</h3>
+                <span class="job-date">2017 - 2021</span>
+              </header>
+              <p class="job-subtitle-detail">IPM | Premià de Mar</p>
+            </article>
+
+            <!-- Education 4 -->
+            <article class="education-item">
+              <header class="timeline-header">
+                <h3 class="job-title">CERTIFICADO B2 DE INGLÉS</h3>
+                <span class="job-date">Obtenido 2023</span>
+              </header>
+              <p class="job-subtitle-detail">Cambridge University</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="teal-divider mobile-only"></div>
+      </main>
+
+      <!-- Sidebar Content (Conocimientos, Idiomas, Aptitudes, Proyectos) -->
+      <aside class="sidebar">
+        <!-- Conocimientos -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Conocimientos</h2>
+          <ul class="skills-list">
+            <li>
+              <span class="skill-name">GIT</span>
+              <div class="skill-dots" aria-label="Nivel 8 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span
+                  class="dot"></span>
+              </div>
+            </li>
+            <li>
+              <span class="skill-name">HTML</span>
+              <div class="skill-dots" aria-label="Nivel 8 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span
+                  class="dot"></span>
+              </div>
+            </li>
+            <li>
+              <span class="skill-name">C#</span>
+              <div class="skill-dots" aria-label="Nivel 8 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span
+                  class="dot"></span>
+              </div>
+            </li>
+            <li>
+              <span class="skill-name">JAVASCRIPT</span>
+              <div class="skill-dots" aria-label="Nivel 7 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </li>
+            <li>
+              <span class="skill-name">OFFICE</span>
+              <div class="skill-dots" aria-label="Nivel 8 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span
+                  class="dot"></span>
+              </div>
+            </li>
+            <li>
+              <span class="skill-name">CSS</span>
+              <div class="skill-dots" aria-label="Nivel 8 de 10">
+                <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span><span
+                  class="dot filled"></span><span class="dot filled"></span><span class="dot"></span><span
+                  class="dot"></span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Idiomas -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Idiomas</h2>
+          <ul class="languages-list">
+            <li>
+              <span class="lang-name">Español</span>
+              <span class="lang-level">— Nativo</span>
+            </li>
+            <li>
+              <span class="lang-name">Catalán</span>
+              <span class="lang-level">— Intermedio</span>
+            </li>
+            <li>
+              <span class="lang-name">Inglés</span>
+              <span class="lang-level">— Avanzado (B2, 2023)</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Aptitudes -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Aptitudes</h2>
+          <ul class="traits-list">
+            <li>
+              <strong>Trabajo en equipo</strong> — Colaboración efectiva y comunicación clara dentro de grupos
+              multidisciplinares.
+            </li>
+            <li>
+              <strong>Resolución de problemas</strong> — Habilidad para identificar problemas técnicos y proponer
+              soluciones lógicas.
+            </li>
+            <li>
+              <strong>Proactividad</strong> — Curiosidad natural por aprender nuevas tecnologías y herramientas del
+              sector.
+            </li>
+            <li>
+              <strong>Adaptabilidad</strong> — Capacidad para gestionar prioridades cambiantes y cumplir con plazos
+              exigentes.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Proyectos -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">Proyectos</h2>
+          <ul class="works-list">
+            <li><a href="https://github.com/ciromartinezmartin" target="_blank"
+                rel="noopener">github.com/ciromartinezmartin <span class="arrow">→</span></a></li>
+            <li><a href="https://linkedin.com/in/ciromartinezmartin" target="_blank"
+                rel="noopener">linkedin.com/in/ciromartinezmartin <span class="arrow">→</span></a></li>
+          </ul>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <h2 class="footer-title">¡Ponte en contacto!</h2>
+      <div class="contact-links">
+        <a href="mailto:ciromartinezmartin@gmail.com" class="contact-item email-link"
+          id="email-link">ciromartinezmartin@gmail.com</a>
+        <span class="contact-divider">|</span>
+        <a href="tel:+34691931327" class="contact-item phone-link" id="phone-link">+34 691 93 13 27</a>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="social-links">
+        <!-- Instagram -->
+        <a href="https://instagram.com" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Ciro Martínez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

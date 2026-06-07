@@ -1,0 +1,895 @@
+/* ==========================================================================
+   myDreamPlace Global Styling & Design Tokens
+   ========================================================================== */
+
+:root {
+  /* Colors - Sleek Custom HSL Palette */
+  --color-primary: hsl(226, 78%, 49%);
+  --color-primary-hover: hsl(226, 78%, 42%);
+  --color-primary-glow: hsla(226, 78%, 49%, 0.15);
+  --color-accent: hsl(210, 100%, 50%);
+  --color-success: hsl(142, 72%, 29%);
+  --color-danger: hsl(350, 89%, 60%);
+  
+  --bg-primary: hsl(210, 20%, 98%);
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-input: hsl(210, 20%, 96%);
+  
+  --text-title: hsl(224, 25%, 12%);
+  --text-main: hsl(224, 15%, 32%);
+  --text-muted: hsl(224, 12%, 55%);
+  --border-color: hsl(224, 15%, 90%);
+  
+  --color-warning: hsl(48, 100%, 96%);
+  --color-warning-border: hsl(48, 100%, 90%);
+  --color-warning-text: hsl(40, 80%, 25%);
+  
+  /* Fonts */
+  --font-title: 'Outfit', 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  
+  /* Layout Options */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(27, 73, 224, 0.06);
+  --shadow-lg: 0 16px 40px rgba(27, 73, 224, 0.12);
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+/* ==========================================================================
+   Navigation Bar Header
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: hsla(0, 0%, 100%, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  height: 70px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-title);
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-primary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  padding: 6px 0;
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.admin-btn {
+  background-color: var(--color-primary-glow);
+  color: var(--color-primary) !important;
+  padding: 6px 14px !important;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+}
+
+.admin-btn:hover {
+  background-color: var(--color-primary);
+  color: #fff !important;
+}
+
+.admin-btn::after {
+  display: none;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary-glow);
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+/* ==========================================================================
+   Hero Section & Search Panel
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 500px;
+  background: linear-gradient(rgba(20, 25, 45, 0.45), rgba(20, 25, 45, 0.45)), 
+              url('assets/dest-australia.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  color: #fff;
+  z-index: 2;
+  margin-top: -30px;
+}
+
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Panel Overlays */
+.search-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 16px;
+  background: hsla(0, 0%, 100%, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--border-radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: left;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-title);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background-color: var(--bg-input);
+  padding: 10px 10px 10px 32px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-title);
+  font-weight: 500;
+  outline: none;
+  border: 1.5px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+  background-color: #fff;
+}
+
+.btn-search {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0 32px;
+  height: 42px;
+  align-self: flex-end;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(27, 73, 224, 0.2);
+}
+
+.btn-search:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-search:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   COVID Warning Banner
+   ========================================================================== */
+.covid-banner {
+  background-color: var(--color-warning);
+  border-bottom: 1px solid var(--color-warning-border);
+  padding: 12px 24px;
+}
+
+.covid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.covid-icon {
+  font-size: 1.2rem;
+}
+
+.covid-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-warning-text);
+}
+
+.covid-link {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.covid-link:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ==========================================================================
+   Main Grid Layout & Sections
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.section {
+  margin-bottom: 56px;
+}
+
+.section-intro {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  color: var(--text-title);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 650px;
+}
+
+.loading-placeholder {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Destinations Grid Section
+   ========================================================================== */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dest-card {
+  position: relative;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  height: 220px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.dest-img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.dest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.dest-card:hover .dest-img {
+  transform: scale(1.06);
+}
+
+.dest-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent 50%, rgba(20, 25, 45, 0.8) 100%);
+  z-index: 1;
+}
+
+.dest-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  color: #fff;
+  z-index: 2;
+}
+
+.dest-name {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.dest-count {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   Inspirations Grid Section
+   ========================================================================== */
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.insp-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.insp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 73, 224, 0.2);
+}
+
+.insp-img-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.insp-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.insp-card:hover .insp-img {
+  transform: scale(1.06);
+}
+
+.insp-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.insp-title {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--text-title);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.insp-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Popular Hotels Grid Section
+   ========================================================================== */
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hotel-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.hotel-img-wrapper {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hotel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.hotel-card:hover .hotel-img {
+  transform: scale(1.05);
+}
+
+.hotel-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.hotel-name {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--text-title);
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.hotel-location {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotel-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.hotel-price {
+  font-size: 0.95rem;
+  color: var(--text-title);
+  font-weight: 700;
+}
+
+.hotel-price span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hotel-rating-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star-icon {
+  color: hsl(45, 100%, 50%);
+  font-size: 0.9rem;
+}
+
+.rating-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+.footer {
+  background-color: hsl(224, 25%, 12%);
+  color: #fff;
+  border-top: 1px solid hsl(224, 25%, 16%);
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-logo {
+  color: #fff;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: hsl(224, 12%, 70%);
+  max-width: 300px;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-group h4 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footer-links-group a {
+  font-size: 0.88rem;
+  color: hsl(224, 12%, 70%);
+}
+
+.footer-links-group a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid hsl(224, 25%, 16%);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: hsl(224, 12%, 60%);
+}
+
+/* ==========================================================================
+   Welcome Onboarding Modal (Seen in Mockup Overlay)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 25, 45, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.welcome-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  transform: scale(0.9);
+  transition: var(--transition-smooth);
+}
+
+.modal-overlay.active .welcome-card {
+  transform: scale(1);
+}
+
+.welcome-illustration {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 12px;
+}
+
+.welcome-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(27, 73, 224, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================== */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background-color: hsl(224, 25%, 12%);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Responsive Media Queries (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .search-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .btn-search {
+    grid-column: span 2;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hotels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Collapses menu. For complete implementation we would add a menu toggle */
+  }
+  
+  .hero {
+    height: auto;
+    padding: 60px 24px;
+  }
+  
+  .hero-content {
+    margin-top: 0;
+  }
+  
+  .search-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn-search {
+    grid-column: span 1;
+  }
+  
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hotels-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

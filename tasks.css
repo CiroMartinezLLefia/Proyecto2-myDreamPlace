@@ -1,0 +1,488 @@
+/* ==========================================================================
+   Task Manager Dashboard Stylesheet (IA4)
+   ========================================================================== */
+
+/* Main Layout Grid */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 30px;
+  min-height: calc(100vh - 70px - 260px); /* Adjust based on header & footer height */
+}
+
+/* Sidebar Columns */
+.dashboard-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  color: var(--text-title);
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1.5px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+/* Form Styles */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-title);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-control {
+  width: 100%;
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-primary);
+  padding: 10px 14px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-title);
+  font-weight: 500;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px var(--color-primary-glow);
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1.5px solid var(--border-color);
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-primary);
+  border-color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Task Card Component (Live Preview & List Items)
+   ========================================================================== */
+.preview-card-container {
+  perspective: 1000px;
+}
+
+.task-card {
+  background-color: #fff;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-left-width: 5px;
+  transition: var(--transition-smooth);
+  animation: cardFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 14px rgba(20, 25, 45, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Priority Left Borders */
+.task-card.priority-baixa { border-left-color: hsl(142, 72%, 40%); }
+.task-card.priority-mitjana { border-left-color: hsl(45, 100%, 50%); }
+.task-card.priority-alta { border-left-color: hsl(350, 89%, 60%); }
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Badges */
+.badge-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border-color);
+}
+
+.badge-priority {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+
+.badge-priority-baixa {
+  background-color: hsl(142, 70%, 95%);
+  color: hsl(142, 72%, 25%);
+}
+
+.badge-priority-mitjana {
+  background-color: hsl(45, 100%, 95%);
+  color: hsl(40, 80%, 25%);
+}
+
+.badge-priority-alta {
+  background-color: hsl(350, 100%, 96%);
+  color: hsl(350, 89%, 30%);
+}
+
+.task-card-title {
+  font-family: var(--font-title);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-title);
+  word-break: break-word;
+}
+
+.task-card.completed .task-card-title {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.4;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.task-card.completed .task-card-desc {
+  opacity: 0.5;
+}
+
+.task-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.task-card-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.task-card-date svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Card Control Actions */
+.task-card-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--border-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.btn-icon:hover {
+  background-color: var(--bg-primary);
+  color: var(--text-title);
+}
+
+.btn-icon.btn-delete:hover {
+  background-color: hsl(350, 100%, 96%);
+  color: var(--color-danger);
+}
+
+.btn-icon.btn-state {
+  width: auto;
+  padding: 0 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.btn-icon.btn-state:hover {
+  background-color: var(--color-primary-glow);
+  color: var(--color-primary);
+}
+
+.btn-icon.btn-state.completed-btn {
+  color: var(--color-success);
+}
+
+.btn-icon.btn-state.completed-btn:hover {
+  background-color: hsl(142, 70%, 95%);
+}
+
+/* ==========================================================================
+   Dashboard Workspace & Column Boards
+   ========================================================================== */
+.dashboard-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.workspace-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.workspace-header .search-box {
+  flex: 1;
+  max-width: 380px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.workspace-header .search-input {
+  background-color: var(--bg-primary);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-tab {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-tab:hover {
+  background-color: var(--bg-primary);
+  border-color: var(--text-muted);
+}
+
+.filter-tab.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Task Board Columns */
+.task-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.board-column {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.column-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  background-color: #fff;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+}
+
+.column-title-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.column-title-box h3 {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  color: var(--text-title);
+  font-weight: 700;
+}
+
+.column-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-pending { background-color: var(--text-muted); }
+.dot-progress { background-color: var(--color-accent); }
+.dot-completed { background-color: var(--color-success); }
+
+.column-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: var(--bg-primary);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.column-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  min-height: 200px;
+  flex-grow: 1;
+}
+
+/* Empty Column Message */
+.empty-column-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 10px;
+  text-align: center;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  gap: 8px;
+}
+
+.empty-icon {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   Responsive Styles for Task Manager
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .workspace-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .workspace-header .search-box {
+    max-width: 100%;
+  }
+  
+  .filter-tabs {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  
+  .task-board {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
