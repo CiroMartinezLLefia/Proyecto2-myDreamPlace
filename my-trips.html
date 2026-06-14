@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Trips – my Dream Place</title>
+<link rel="stylesheet" href="my-trips.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a href="index.html" class="header__logo" aria-label="my Dream Place home">
+        <svg class="header__logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>my Dream Place</span>
+      </a>
+
+      <button class="header__hamburger" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+      </button>
+
+      <nav class="header__nav" id="primary-nav" aria-label="Primary navigation">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link header__nav-link--active">Home</a></li>
+          <li><a href="search-results.html" class="header__nav-link">Discover</a></li>
+          <li><a href="#" class="header__nav-link">Activities</a></li>
+          <li><a href="#" class="header__nav-link">About</a></li>
+          <li><a href="#" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="header__notification" type="button" aria-label="Notifications">
+          <svg class="header__notification-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__notification-badge"></span>
+        </button>
+        <a href="my-trips.html" aria-label="My trips">
+          <img class="header__profile-img" src="https://i.pravatar.cc/80?img=47" alt="User profile picture">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="trips">
+    <div class="trips__container">
+      <h1 class="trips__title">My trips</h1>
+
+      <article class="trip-card">
+        <img class="trip-card__image" src="https://picsum.photos/seed/lakeside-motel/600/450" alt="Lakeside Motel Waterfront exterior view">
+
+        <div class="trip-card__content">
+          <div class="trip-card__details">
+            <h2 class="trip-card__title">Lakeside Motel Warefront</h2>
+
+            <div class="trip-card__rating">
+              <div class="trip-card__stars" role="img" aria-label="Rating: 4.5 out of 5 stars">
+                <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span class="star-half">
+                  <svg class="star-half__icon star-half__icon--bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span class="star-half__clip">
+                    <svg class="star-half__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <span class="trip-card__rating-text">4.5 (1200 Reviews)</span>
+            </div>
+
+            <p class="trip-card__refund">Non refundable</p>
+            <p class="trip-card__date">Check in: Sunday, March 18, 2022</p>
+            <p class="trip-card__date">Check out: Tuesday, March 20, 2022</p>
+            <p class="trip-card__nights">2 night stay</p>
+          </div>
+
+          <div class="trip-card__price-section">
+            <p class="trip-card__room-info">1 room 2 days</p>
+            <p class="trip-card__price">
+              <span class="trip-card__price-old">$150</span>
+              <span class="trip-card__price-new">$130</span>
+            </p>
+            <p class="trip-card__taxes">Includes taxes and fees</p>
+            <a href="product-detail.html" class="trip-card__button">View trip details</a>
+          </div>
+        </div>
+      </article>
+
+      <section class="history">
+        <h2 class="history__title">Based on your history</h2>
+        <div class="history__grid">
+          <a href="search-results.html" class="history__card-link">
+            <article class="history__card">
+              <img class="history__image" src="https://picsum.photos/seed/australia-sydney/400/400" alt="Aerial view of Sydney harbour, Australia">
+              <h3 class="history__card-title">Australia</h3>
+              <p class="history__card-subtitle">2246 properties</p>
+            </article>
+          </a>
+          <a href="search-results.html" class="history__card-link">
+            <article class="history__card">
+              <img class="history__image" src="https://picsum.photos/seed/japan-fuji/400/400" alt="Mount Fuji and pagoda surrounded by cherry blossoms, Japan">
+              <h3 class="history__card-title">Japan</h3>
+              <p class="history__card-subtitle">1278 properties</p>
+            </article>
+          </a>
+          <a href="search-results.html" class="history__card-link">
+            <article class="history__card">
+              <img class="history__image" src="https://picsum.photos/seed/new-zealand-coast/400/400" alt="Coastal landscape view, New Zealand">
+              <h3 class="history__card-title">New Zealand</h3>
+              <p class="history__card-subtitle">480 properties</p>
+            </article>
+          </a>
+          <a href="search-results.html" class="history__card-link">
+            <article class="history__card">
+              <img class="history__image" src="https://picsum.photos/seed/greece-coastal-town/400/400" alt="Aerial view of a coastal town, Greece">
+              <h3 class="history__card-title">Greece</h3>
+              <p class="history__card-subtitle">320 properties</p>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <div class="covid-banner">
+        <svg class="covid-banner__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <p class="covid-banner__text">Check the latest COVID-19 restrictions before you travel. <a href="#" class="covid-banner__link">Learn more</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg class="footer__logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>my Dream Place</span>
+        </div>
+        <p class="footer__tagline">Your next goto companion for travel</p>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">About</a></li>
+          <li><a href="#" class="footer__link">Jobs</a></li>
+          <li><a href="#" class="footer__link">Newsroom</a></li>
+          <li><a href="#" class="footer__link">Advertising</a></li>
+          <li><a href="#" class="footer__link">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Explore</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Australia</a></li>
+          <li><a href="#" class="footer__link">New Zealand</a></li>
+          <li><a href="#" class="footer__link">United States America (USA)</a></li>
+          <li><a href="#" class="footer__link">Greece</a></li>
+          <li><a href="#" class="footer__link">Maldives</a></li>
+          <li><a href="#" class="footer__link">Singapore</a></li>
+          <li><a href="#" class="footer__link footer__link--accent">See more</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Terms and Policies</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Privacy Policy</a></li>
+          <li><a href="#" class="footer__link">Terms of use</a></li>
+          <li><a href="#" class="footer__link">Acessibility</a></li>
+          <li><a href="#" class="footer__link">Reward system policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__column">
+        <h3 class="footer__heading">Help</h3>
+        <ul class="footer__list">
+          <li><a href="#" class="footer__link">Support</a></li>
+          <li><a href="#" class="footer__link">Cancel your bookings</a></li>
+          <li><a href="#" class="footer__link">Use Coupon</a></li>
+          <li><a href="#" class="footer__link">Refund Policies</a></li>
+          <li><a href="#" class="footer__link">International Travel Documents</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; my Dream Place 2022</p>
+    </div>
+  </footer>
+
+  <script src="my-trips.js"></script>
+</body>
+</html>

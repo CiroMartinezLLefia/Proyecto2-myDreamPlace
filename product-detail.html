@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakeside Motel Warefront – my Dream Place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="product-detail.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand"><span>✈</span> my Dream Place</a>
+      <ul class="navbar__nav" role="list">
+        <li><a href="index.html" class="navbar__nav-link">Home</a></li>
+        <li><a href="search-results.html" class="navbar__nav-link">Discover</a></li>
+        <li><a href="#" class="navbar__nav-link">Activities</a></li>
+        <li><a href="#" class="navbar__nav-link">About</a></li>
+        <li><a href="#" class="navbar__nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="navbar__notif">🔔<span class="navbar__notif-dot"></span></div>
+        <a href="my-trips.html" aria-label="My trips">
+          <img class="navbar__avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="User avatar" />
+        </a>
+      </div>
+      <button class="navbar__hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-pd" id="hamburger-pd">
+        <span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span><span class="navbar__hamburger-bar"></span>
+      </button>
+    </div>
+    <div id="mobile-menu-pd" class="navbar__mobile-menu" role="menu">
+      <a href="index.html" class="navbar__mobile-menu-link">Home</a>
+      <a href="search-results.html" class="navbar__mobile-menu-link">Discover</a>
+      <a href="#" class="navbar__mobile-menu-link">Activities</a>
+      <a href="#" class="navbar__mobile-menu-link">About</a>
+      <a href="#" class="navbar__mobile-menu-link">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery" aria-label="Property photos">
+  <div class="gallery__main">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="Lakeside Motel kitchen and living area" />
+  </div>
+  <div class="gallery__thumb">
+    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Motel exterior with number 38" />
+  </div>
+  <div class="gallery__thumb">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Motel entrance and garden" />
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="detail-tabs" role="tablist">
+  <div class="detail-tabs__inner">
+    <button class="detail-tab active" role="tab" aria-selected="true">Overview</button>
+    <button class="detail-tab" role="tab" aria-selected="false">Rooms</button>
+    <button class="detail-tab" role="tab" aria-selected="false">Guest Reviews</button>
+  </div>
+</div>
+
+<!-- MAIN DETAIL LAYOUT -->
+<div class="detail-layout">
+
+  <!-- LEFT COLUMN -->
+  <div>
+    <!-- Hotel header -->
+    <div>
+      <h1 class="hotel-header__name">Lakeside Motel Warefront</h1>
+      <div class="hotel-header__stars">
+        <span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star" style="opacity:.5">★</span>
+        <span class="hotel-header__rating">4.5 (1200 Reviews)</span>
+      </div>
+      <div class="hotel-header__address">
+        <span class="hotel-header__address-icon">📍</span>
+        Lorem ipsum road, Tantruim-2322, Melbourne, Australia
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="overview-box">
+      <h2 class="overview-box__title">Overview</h2>
+      <p class="overview-box__text">Featuring free WiFi throughout the property, Lakeside Motel Warefront offers accommodations in Lakes Entrance, 19 mi from Bairnsdale. Free private parking is available on site.</p>
+      <p class="overview-box__text">Each room at this motel is air conditioned and comes with a flat-screen TV. You will find a kettle, toaster and a microwave in the room. Each room is fitted with a private bathroom. Guests have access to barbecue facilities and a lovely large lawn area. Metung is 6.8 mi from Lakeside Motel Warefront, while Paynesville is 14 mi from the property.</p>
+      <p class="overview-box__text">Couples in particular like the location – they rated it 9.2 for a two-person trip.</p>
+
+      <!-- Top Facilities -->
+      <div class="facilities">
+        <h3 class="facilities__title">Top facilities</h3>
+        <div class="facilities__grid">
+          <div class="facility-item"><span class="facility-item__icon">📶</span> Free wifi</div>
+          <div class="facility-item"><span class="facility-item__icon">💼</span> Business Services</div>
+          <div class="facility-item"><span class="facility-item__icon">❄️</span> Air Conditioning</div>
+          <div class="facility-item"><span class="facility-item__icon">🏊</span> Swimming pool</div>
+          <div class="facility-item"><span class="facility-item__icon">🚗</span> Parking available</div>
+          <div class="facility-item"><span class="facility-item__icon">👍</span> Top rated in area</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div>
+    <div class="map-box">
+      <img class="map-box__img" src="https://maps.googleapis.com/maps/api/staticmap?center=Melbourne,Australia&zoom=13&size=600x400&maptype=roadmap&key=AIzaSyD-PLACEHOLDER" alt="Map of Melbourne area" onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=60'" />
+    </div>
+    <div class="explore-area">
+      <h3 class="explore-area__title">Explore the area</h3>
+      <div class="explore-row">
+        <div class="explore-row__place"><span class="explore-row__icon">✈</span> Hotel Penselvenyia</div>
+        <div class="explore-row__dist">2 min drive</div>
+      </div>
+      <div class="explore-row">
+        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Travis Bakery store house</div>
+        <div class="explore-row__dist">10 min drive</div>
+      </div>
+      <div class="explore-row">
+        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Olivia Johnson Garden</div>
+        <div class="explore-row__dist">15 min drive</div>
+      </div>
+      <div class="explore-row">
+        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Norman Opera Circus</div>
+        <div class="explore-row__dist">18 min drive</div>
+      </div>
+      <div class="explore-row">
+        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Rockdeset hotel</div>
+        <div class="explore-row__dist">32 min drive</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- AVAILABLE ROOMS -->
+<section class="available-rooms" aria-labelledby="rooms-heading">
+  <h2 class="available-rooms__title" id="rooms-heading">Available rooms</h2>
+
+  <!-- Date / Guest bar -->
+  <div class="availability-bar" role="search">
+    <div class="availability-field">
+      <span class="availability-field__icon">📅</span>
+      <input class="availability-field__input" type="text" value="Mar 18, 2022" aria-label="Check in date" readonly />
+    </div>
+    <div class="availability-field">
+      <span class="availability-field__icon">📅</span>
+      <input class="availability-field__input" type="text" value="March 20, 2022" aria-label="Check out date" readonly />
+    </div>
+    <div class="availability-field" style="border-right:none">
+      <span class="availability-field__icon">👤</span>
+      <input class="availability-field__input" type="text" value="2 adult, 1 room" aria-label="Guests" readonly />
+    </div>
+    <a href="search-results.html" class="availability-btn">Check Availability</a>
+  </div>
+
+  <!-- Rooms grid -->
+  <div class="rooms-grid">
+
+    <!-- Promo card -->
+    <div class="promo-card" aria-label="Promotional offer">
+      <div class="promo-card__logo"><span>✈</span> my Dream Place</div>
+      <div class="promo-card__badge">20% off<br>Use Promotional<br>Coupon Code:</div>
+      <div class="promo-card__code">Orlando</div>
+      <img class="promo-card__character" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=60" alt="Traveller character illustration" style="border-radius: 50%; object-position: center top;" />
+    </div>
+
+    <!-- Room 1 -->
+    <article class="room-card">
+      <img class="room-card__img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard twin bed room with multiple beds" />
+      <div class="room-card__body">
+        <h3 class="room-card__name">Standard twin ben, Multiple beds</h3>
+        <div class="room-card__meta">
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">📐</span> 300 sq ft</div>
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> Sleeps 3</div>
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> 1 double bed and 1 twin bed</div>
+        </div>
+        <a href="checkout.html" class="room-card__reserve-btn">Reserve suite</a>
+      </div>
+    </article>
+
+    <!-- Room 2 -->
+    <article class="room-card">
+      <img class="room-card__img" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Standard twin bed room with queen bed" />
+      <div class="room-card__body">
+        <h3 class="room-card__name">Standard twin ben, 1 Queen bed</h3>
+        <div class="room-card__meta">
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">📐</span> 300 sq ft</div>
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> Sleeps 3</div>
+          <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> 1 double bed and 1 twin bed</div>
+        </div>
+        <a href="checkout.html" class="room-card__reserve-btn">Reserve suite</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- COVID BANNER -->
+<div class="covid-banner" role="alert">
+  <div class="covid-banner__inner">
+    <span class="covid-banner__icon">⚠️</span>
+    <p>Check the latest COVID-19 restrictions before you travel. <a class="covid-banner__link" href="#">Learn more</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-icon">✈</span> my Dream Place</div>
+        <p class="footer__tagline">Your next goto companion for travel</p>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Company</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">About</a></li><li><a href="#" class="footer__col-link">Jobs</a></li><li><a href="#" class="footer__col-link">Newsroom</a></li><li><a href="#" class="footer__col-link">Advertising</a></li><li><a href="#" class="footer__col-link">Contact us</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Explore</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Australia</a></li><li><a href="#" class="footer__col-link">New Zealand</a></li><li><a href="#" class="footer__col-link">United States America (USA)</a></li><li><a href="#" class="footer__col-link">Greece</a></li><li><a href="#" class="footer__col-link">Maldives</a></li><li><a href="#" class="footer__col-link">Singapore</a></li><li><a href="#" class="footer__col-link footer__col-link--accent">See more</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Terms and Policies</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Privacy Policy</a></li><li><a href="#" class="footer__col-link">Terms of use</a></li><li><a href="#" class="footer__col-link">Acessibility</a></li><li><a href="#" class="footer__col-link">Reward system policy</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Help</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Support</a></li><li><a href="#" class="footer__col-link">Cancel your bookings</a></li><li><a href="#" class="footer__col-link">Use Coupon</a></li><li><a href="#" class="footer__col-link">Refund Policies</a></li><li><a href="#" class="footer__col-link">International Travel Documents</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>© my Dream Place 2022</p></div>
+  </div>
+</footer>
+
+<script src="product-detail.js"></script>
+</body>
+</html>

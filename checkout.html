@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Your Reservation – my Dream Place</title>
+<link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <header class="header header--simple">
+    <div class="header__container">
+      <a href="index.html" class="header__logo" aria-label="my Dream Place home">
+        <svg class="header__logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>my Dream Place</span>
+      </a>
+
+      <div class="header__actions">
+        <button class="header__notification" type="button" aria-label="Notifications">
+          <svg class="header__notification-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="header__notification-badge"></span>
+        </button>
+        <a href="my-trips.html" aria-label="My trips">
+          <img class="header__profile-img" src="https://i.pravatar.cc/80?img=47" alt="User profile picture">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout">
+    <div class="checkout__container">
+      <h1 class="checkout__title">Secure your reservation</h1>
+
+      <div class="covid-banner">
+        <svg class="covid-banner__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <p class="covid-banner__text">Check the latest COVID-19 restrictions before you travel. <a href="#" class="covid-banner__link">Learn more</a></p>
+      </div>
+
+      <div class="checkout__layout">
+        <div class="checkout__main">
+
+          <!-- Room details -->
+          <section class="form-card" aria-labelledby="room-heading">
+            <div class="form-card__header">
+              <svg class="form-card__header-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h2 id="room-heading">Room 1<span class="form-card__subtitle">2 adults, 1 double bed and 1 twin bed, Non-smoking</span></h2>
+            </div>
+            <div class="form-card__body">
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="first-name">First name</label>
+                  <input class="form-field__input" type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="last-name">Last name</label>
+                  <input class="form-field__input" type="text" id="last-name" name="last-name">
+                </div>
+              </div>
+
+              <div class="phone-field">
+                <label class="form-field__label" for="mobile-number" style="display:block; margin-bottom: var(--space-2);">Mobile number</label>
+                <div class="phone-field__input-group">
+                  <div class="phone-field__code">
+                    <span class="phone-field__flag" aria-hidden="true">🇦🇺</span>
+                    <span>+61</span>
+                    <svg class="phone-field__chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <input class="form-field__input" type="tel" id="mobile-number" name="mobile-number">
+                </div>
+              </div>
+
+              <label class="checkbox-field">
+                <input class="checkbox-field__input" type="checkbox" name="text-alerts">
+                <span>Receive text alerts about this trip.</span>
+              </label>
+            </div>
+          </section>
+
+          <!-- Payment options -->
+          <section class="form-card" aria-labelledby="payment-heading">
+            <div class="form-card__header">
+              <svg class="form-card__header-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                <line x1="1" y1="10" x2="23" y2="10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <h2 id="payment-heading">Payment options</h2>
+            </div>
+            <div class="form-card__body">
+              <div class="tabs" role="tablist">
+                <button class="tabs__item tabs__item--active" type="button" role="tab" aria-selected="true">Debit/Credit Card</button>
+                <button class="tabs__item" type="button" role="tab" aria-selected="false">Paypal</button>
+                <button class="tabs__item" type="button" role="tab" aria-selected="false">Bank transfer</button>
+              </div>
+
+              <div class="card-logos" aria-hidden="true">
+                <div class="card-logo card-logo--mastercard" aria-label="Mastercard">
+                  <span class="card-logo__circle card-logo__circle--red"></span>
+                  <span class="card-logo__circle card-logo__circle--yellow"></span>
+                </div>
+                <div class="card-logo card-logo--visa">VISA</div>
+                <div class="card-logo card-logo--amex">AMEX</div>
+                <div class="card-logo card-logo--discover">discover</div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="name-on-card">Name on card</label>
+                  <input class="form-field__input" type="text" id="name-on-card" name="name-on-card">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="card-number">Debit/Credit card number</label>
+                  <input class="form-field__input" type="text" id="card-number" name="card-number">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="exp-month">Expiration Date</label>
+                  <div class="form-field--select-wrapper">
+                    <select class="form-field__select" id="exp-month" name="exp-month">
+                      <option value="">Month</option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                    <svg class="form-field__chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="exp-year">&nbsp;</label>
+                  <div class="form-field--select-wrapper">
+                    <select class="form-field__select" id="exp-year" name="exp-year">
+                      <option value="">Year</option>
+                      <option>2026</option>
+                      <option>2027</option>
+                      <option>2028</option>
+                      <option>2029</option>
+                      <option>2030</option>
+                    </select>
+                    <svg class="form-field__chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-field__label" for="security-code">Security Code</label>
+                  <input class="form-field__input" type="text" id="security-code" name="security-code">
+                </div>
+                <div class="form-field">
+                  <label class="form-field__label" for="billing-zip">Billing Zip code</label>
+                  <input class="form-field__input" type="text" id="billing-zip" name="billing-zip">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Important information -->
+          <section class="info-card" aria-labelledby="info-heading">
+            <div class="info-card__header">
+              <h2 id="info-heading">Important information about your booking</h2>
+            </div>
+            <div class="info-card__body">
+              <ol class="info-card__list">
+                <li>This rate is non-refundable. If you change or cancel your booking you will not get a refund or credit to use for a future stay.</li>
+                <li>Stay extensions will require a new reservation.</li>
+                <li>Front desk staff will greet guests on arrival</li>
+                <li>No refunds will be issued for late check-in or early check-out.</li>
+              </ol>
+
+              <p class="info-card__terms">By clicking the button below, I acknowledge that I have reviewed the <a href="#">Privacy Statement</a> and have reviewd and accept the <a href="#">Rules and Restrictions</a> and <a href="#">Terms of Use</a>.</p>
+
+              <a href="my-trips.html" class="btn btn--primary">Complete Booking</a>
+
+              <p class="info-card__secure">
+                <svg class="info-card__secure-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                We use secure transmission and encrypted storage to protect your personal information
+              </p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="checkout__sidebar">
+          <a href="product-detail.html" class="hotel-summary">
+            <img class="hotel-summary__image" src="https://picsum.photos/seed/lakeside-motel/600/450" alt="Lakeside Motel Waterfront exterior view">
+            <div class="hotel-summary__body">
+              <h3 class="hotel-summary__title">Lakeside Motel Warefront</h3>
+              <div class="hotel-summary__rating">
+                <div class="trip-card__stars" role="img" aria-label="Rating: 4.5 out of 5 stars">
+                  <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <svg class="star star--full" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  <span class="star-half">
+                    <svg class="star-half__icon star-half__icon--bg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <span class="star-half__clip">
+                      <svg class="star-half__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </span>
+                  </span>
+                </div>
+                <span class="hotel-summary__rating-text">4.5 (1200 Reviews)</span>
+              </div>
+              <p class="hotel-summary__refund">Non refundable</p>
+              <p class="hotel-summary__date">Check in: Sunday, March 18, 2022</p>
+              <p class="hotel-summary__date">Check out: Tuesday, March 20, 2022</p>
+              <p class="hotel-summary__nights">2 night stay</p>
+            </div>
+          </a>
+
+          <section class="price-details" aria-labelledby="price-heading">
+            <div class="price-details__header">
+              <h3 id="price-heading">Price details</h3>
+            </div>
+            <div class="price-details__body">
+              <div class="price-row">
+                <span>1 room x 2 nights</span>
+                <span>$260</span>
+              </div>
+              <div class="price-row">
+                <span>Taxes and fees</span>
+                <span>$45</span>
+              </div>
+              <hr class="price-details__divider">
+              <div class="price-row price-row--total">
+                <span>Total</span>
+                <span>$305</span>
+              </div>
+
+              <a href="#" class="price-details__coupon-link">Have a coupon code?</a>
+
+              <div class="coupon-field">
+                <label class="coupon-field__label" for="coupon-code">Coupon code</label>
+                <div class="coupon-field__group">
+                  <input class="coupon-field__input" type="text" id="coupon-code" name="coupon-code" placeholder="Enter code">
+                  <button class="coupon-field__button" type="button">Apply</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

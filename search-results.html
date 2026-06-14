@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melbourne Search Results – my Dream Place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="search-results.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand">
+        <span class="navbar__brand-icon">✈</span>
+        my Dream Place
+      </a>
+      <ul class="navbar__nav" role="list">
+        <li><a href="index.html" class="navbar__nav-link">Home</a></li>
+        <li><a href="search-results.html" class="navbar__nav-link">Discover</a></li>
+        <li><a href="#" class="navbar__nav-link">Activities</a></li>
+        <li><a href="#" class="navbar__nav-link">About</a></li>
+        <li><a href="#" class="navbar__nav-link">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <div class="navbar__notif" aria-label="Notifications">
+          🔔
+          <span class="navbar__notif-dot"></span>
+        </div>
+        <a href="my-trips.html" aria-label="My trips">
+          <img class="navbar__avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="User avatar" />
+        </a>
+      </div>
+      <button class="navbar__hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-sr" id="hamburger-sr">
+        <span class="navbar__hamburger-bar"></span>
+        <span class="navbar__hamburger-bar"></span>
+        <span class="navbar__hamburger-bar"></span>
+      </button>
+    </div>
+    <div id="mobile-menu-sr" class="navbar__mobile-menu" role="menu">
+      <a href="index.html" class="navbar__mobile-menu-link" role="menuitem">Home</a>
+      <a href="search-results.html" class="navbar__mobile-menu-link" role="menuitem">Discover</a>
+      <a href="#" class="navbar__mobile-menu-link" role="menuitem">Activities</a>
+      <a href="#" class="navbar__mobile-menu-link" role="menuitem">About</a>
+      <a href="#" class="navbar__mobile-menu-link" role="menuitem">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO SEARCH BAR -->
+<div class="hero-search" role="search" aria-label="Search properties">
+  <div class="container">
+    <div class="hero-search__bar">
+      <div class="hero-search__field">
+        <span class="hero-search__icon">📍</span>
+        <input class="hero-search__input" type="text" value="Melbourne" aria-label="Destination" />
+      </div>
+      <div class="hero-search__field">
+        <span class="hero-search__icon">📅</span>
+        <input class="hero-search__input" type="text" value="Mar 18, 2022" aria-label="Check in" />
+      </div>
+      <div class="hero-search__field">
+        <span class="hero-search__icon">📅</span>
+        <input class="hero-search__input" type="text" value="March 20, 2022" aria-label="Check out" />
+      </div>
+      <div class="hero-search__field" style="border-right:none">
+        <span class="hero-search__icon">👤</span>
+        <input class="hero-search__input" type="text" value="2 adult, 1 room" aria-label="Guests" />
+      </div>
+      <a href="search-results.html" class="hero-search__btn" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">Search</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="search-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Search filters">
+
+    <!-- Property name search -->
+    <div class="sidebar__panel">
+      <p class="sidebar__title">Search by property name</p>
+      <div class="sidebar__search-wrap">
+        <span class="sidebar__search-icon">🔍</span>
+        <input class="sidebar__search-input" type="text" placeholder="eg. Beach westpalm" aria-label="Search by property name" />
+      </div>
+    </div>
+
+    <!-- Filter by -->
+    <div class="sidebar__panel">
+      <p class="sidebar__title">Filter by</p>
+
+      <p class="sidebar__subtitle">Your budget per day</p>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 0 - $ 200</label><span class="filter-row__count">200</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 200 - $ 500</label><span class="filter-row__count">100</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 500 - $ 1,000</label><span class="filter-row__count">15</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 1,000 - $ 2,000</label><span class="filter-row__count">12</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 2,000 - $ 5,000</label><span class="filter-row__count">230</span></div>
+      <div class="filter-row" style="margin-top:8px">
+        <span style="font-size:.8125rem;color:var(--text-secondary)">Set your own budget</span>
+        <div class="budget-toggle" role="switch" aria-checked="false" tabindex="0"></div>
+      </div>
+
+      <div class="sidebar__divider"></div>
+
+      <p class="sidebar__subtitle">Rating</p>
+      <p style="font-size:.75rem;color:var(--text-secondary);margin-bottom:6px">Show only ratings more than</p>
+      <div class="rating-stars">
+        <span class="rating-star" aria-label="1 star">★</span>
+        <span class="rating-star" aria-label="2 stars">★</span>
+        <span class="rating-star" aria-label="3 stars">★</span>
+        <span class="rating-star" aria-label="4 stars">★</span>
+        <span class="rating-star" aria-label="5 stars">★</span>
+      </div>
+
+      <div class="sidebar__divider"></div>
+
+      <p class="sidebar__subtitle">Popular Filters</p>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Free cancellation</label><span class="filter-row__count">200</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Spa</label><span class="filter-row__count">100</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach front</label><span class="filter-row__count">15</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hot tub/ jacuzzi</label><span class="filter-row__count">12</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Book without credit card</label><span class="filter-row__count">230</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> No prepayment</label><span class="filter-row__count">12</span></div>
+
+      <div class="sidebar__divider"></div>
+
+      <p class="sidebar__subtitle">Activities</p>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Fishing</label><span class="filter-row__count">200</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hiking</label><span class="filter-row__count">100</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach</label><span class="filter-row__count">15</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Cycling</label><span class="filter-row__count">12</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Sauna</label><span class="filter-row__count">230</span></div>
+      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Night lights</label><span class="filter-row__count">12</span></div>
+    </div>
+
+  </aside>
+
+  <!-- RESULTS -->
+  <main aria-label="Search results">
+    <div class="results__header">
+      <h1 class="results__title">Melbourne : 2,582 search results found</h1>
+      <div class="results__sort">
+        Sort by
+        <select class="results__sort-select" aria-label="Sort results">
+          <option>Recommended</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Rating</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs" role="tablist">
+      <button class="filter-tab active" role="tab" aria-selected="true">Our top picks</button>
+      <button class="filter-tab" role="tab" aria-selected="false">Hotel and apartments</button>
+      <button class="filter-tab" role="tab" aria-selected="false">Residence</button>
+      <button class="filter-tab" role="tab" aria-selected="false">Resort</button>
+      <button class="filter-tab" role="tab" aria-selected="false">Shared Space</button>
+    </div>
+
+    <!-- Result 1 – Lakeside Motel -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Lakeside Motel Warefront exterior" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row">
+          <span class="result-card__promo-badge">Book now and receive 15% off</span>
+        </div>
+        <h2 class="result-card__name">Lakeside Motel Warefront</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__discount-badge" style="margin-bottom:4px">5% off</div>
+          <div class="result-card__price-original">$160</div>
+          <div class="result-card__price">$130</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 2 – Julia Dens Resort -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=400&q=80" alt="Julia Dens Resort exterior" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row"></div>
+        <h2 class="result-card__name">Julia Dens Resort</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__price">$240</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 3 – Aghnim Scepter Hotel -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=400&q=80" alt="Aghnim Scepter Hotel room" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row">
+          <span class="result-card__restaurant-badge">Receive 30% discount on a restaurant</span>
+        </div>
+        <h2 class="result-card__name">Aghnim Scepter Hotel</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__price">$300</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 4 – Marineford Hotel -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&q=80" alt="Marineford Hotel exterior" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row"></div>
+        <h2 class="result-card__name">Marineford Hotel</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__price">$120</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 5 – Shanghai Open House -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&q=80" alt="Shanghai Open House bedroom" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row"></div>
+        <h2 class="result-card__name">Shanghai Open House</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__price">$145</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 6 – Ocean Waves Resort -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Ocean Waves Resort exterior" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row"></div>
+        <h2 class="result-card__name">Ocean Waves Resort</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__price">$310</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 7 – Maimi City Frontier -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&q=80" alt="Maimi City frontier room" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row">
+          <span class="result-card__restaurant-badge">Receive 30% discount on a restaurant</span>
+        </div>
+        <h2 class="result-card__name">Maimi City frontier</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__discount-badge" style="margin-bottom:4px">15% off</div>
+          <div class="result-card__price-original">$200</div>
+          <div class="result-card__price">$190</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Result 8 – Lakeside Motel 2 -->
+    <article class="result-card">
+      <div class="result-card__img-wrap">
+        <img class="result-card__img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Lakeside Motel Warefront room" />
+      </div>
+      <div class="result-card__body">
+        <div class="result-card__badge-row"></div>
+        <h2 class="result-card__name">Lakeside Motel Warefront</h2>
+        <div class="result-card__stars">
+          <span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-filled">★</span><span class="result-card__star star-half">★</span>
+          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
+        </div>
+        <p class="result-card__desc">Live a little and celebrate with champagne</p>
+        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
+        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
+      </div>
+      <div class="result-card__price-col">
+        <div class="result-card__room-meta">1 room 2 days</div>
+        <div class="result-card__price-wrap">
+          <div class="result-card__discount-badge" style="margin-bottom:4px">15% off</div>
+          <div class="result-card__price-original">$320</div>
+          <div class="result-card__price">$300</div>
+          <div class="result-card__price-note">Includes taxes and fees</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Load more -->
+    <div class="load-more">
+      <button class="load-more__btn" type="button">Load more results</button>
+    </div>
+  </main>
+</div>
+
+<!-- COVID BANNER -->
+<div class="covid-banner" role="alert">
+  <div class="covid-banner__inner">
+    <span class="covid-banner__icon">⚠️</span>
+    <p>Check the latest COVID-19 restrictions before you travel. <a class="covid-banner__link" href="#">Learn more</a></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="footer__brand-icon">✈</span> my Dream Place</div>
+        <p class="footer__tagline">Your next goto companion for travel</p>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Company</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">About</a></li><li><a href="#" class="footer__col-link">Jobs</a></li><li><a href="#" class="footer__col-link">Newsroom</a></li><li><a href="#" class="footer__col-link">Advertising</a></li><li><a href="#" class="footer__col-link">Contact us</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Explore</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Australia</a></li><li><a href="#" class="footer__col-link">New Zealand</a></li><li><a href="#" class="footer__col-link">United States America (USA)</a></li><li><a href="#" class="footer__col-link">Greece</a></li><li><a href="#" class="footer__col-link">Maldives</a></li><li><a href="#" class="footer__col-link">Singapore</a></li><li><a href="#" class="footer__col-link footer__col-link--accent">See more</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Terms and Policies</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Privacy Policy</a></li><li><a href="#" class="footer__col-link">Terms of use</a></li><li><a href="#" class="footer__col-link">Acessibility</a></li><li><a href="#" class="footer__col-link">Reward system policy</a></li></ul>
+      </div>
+      <div>
+        <h3 class="footer__col-title">Help</h3>
+        <ul class="footer__col-links"><li><a href="#" class="footer__col-link">Support</a></li><li><a href="#" class="footer__col-link">Cancel your bookings</a></li><li><a href="#" class="footer__col-link">Use Coupon</a></li><li><a href="#" class="footer__col-link">Refund Policies</a></li><li><a href="#" class="footer__col-link">International Travel Documents</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom"><p>© my Dream Place 2022</p></div>
+  </div>
+</footer>
+
+<script src="search-results.js"></script>
+</body>
+</html>
