@@ -426,6 +426,9 @@ select {
 }
 
 .search-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--color-primary);
   color: #fff;
   font-size: var(--font-size-sm);
