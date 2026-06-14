@@ -15,7 +15,7 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__brand"><span>✈</span> my Dream Place</a>
+      <a href="index.html" class="navbar__brand"><img class="navbar__brand-icon" src="imgs/LogoBlue.png" alt="my Dream Place logo" /> my Dream Place</a>
       <ul class="navbar__nav" role="list">
         <li><a href="index.html" class="navbar__nav-link">Home</a></li>
         <li><a href="search-results.html" class="navbar__nav-link">Discover</a></li>
@@ -24,9 +24,9 @@
         <li><a href="#" class="navbar__nav-link">Contact</a></li>
       </ul>
       <div class="navbar__actions">
-        <div class="navbar__notif">🔔<span class="navbar__notif-dot"></span></div>
+        <div class="navbar__notif"><img class="navbar__notif-icon" src="imgs/WhiteBell.png" alt="Notifications" /></div>
         <a href="my-trips.html" aria-label="My trips">
-          <img class="navbar__avatar" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&q=80" alt="User avatar" />
+          <img class="navbar__avatar" src="imgs/pfp.png" alt="User avatar" />
         </a>
       </div>
       <button class="navbar__hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu-pd" id="hamburger-pd">
@@ -74,11 +74,11 @@
     <div>
       <h1 class="hotel-header__name">Lakeside Motel Warefront</h1>
       <div class="hotel-header__stars">
-        <span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star">★</span><span class="hotel-header__star" style="opacity:.5">★</span>
+        <img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" style="opacity:.5" src="imgs/Star.png" alt="" />
         <span class="hotel-header__rating">4.5 (1200 Reviews)</span>
       </div>
       <div class="hotel-header__address">
-        <span class="hotel-header__address-icon">📍</span>
+        <img class="hotel-header__address-icon" src="imgs/LocationBlue.png" alt="" aria-hidden="true" />
         Lorem ipsum road, Tantruim-2322, Melbourne, Australia
       </div>
     </div>
@@ -113,23 +113,23 @@
     <div class="explore-area">
       <h3 class="explore-area__title">Explore the area</h3>
       <div class="explore-row">
-        <div class="explore-row__place"><span class="explore-row__icon">✈</span> Hotel Penselvenyia</div>
+        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/LogoBlue.png" alt="" aria-hidden="true" /> Hotel Penselvenyia</div>
         <div class="explore-row__dist">2 min drive</div>
       </div>
       <div class="explore-row">
-        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Travis Bakery store house</div>
+        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Travis Bakery store house</div>
         <div class="explore-row__dist">10 min drive</div>
       </div>
       <div class="explore-row">
-        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Olivia Johnson Garden</div>
+        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Olivia Johnson Garden</div>
         <div class="explore-row__dist">15 min drive</div>
       </div>
       <div class="explore-row">
-        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Norman Opera Circus</div>
+        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Norman Opera Circus</div>
         <div class="explore-row__dist">18 min drive</div>
       </div>
       <div class="explore-row">
-        <div class="explore-row__place"><span class="explore-row__icon">📍</span> Rockdeset hotel</div>
+        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Rockdeset hotel</div>
         <div class="explore-row__dist">32 min drive</div>
       </div>
     </div>
@@ -144,15 +144,15 @@
   <!-- Date / Guest bar -->
   <div class="availability-bar" role="search">
     <div class="availability-field">
-      <span class="availability-field__icon">📅</span>
+      <img class="availability-field__icon" src="imgs/calendar.png" alt="" aria-hidden="true" />
       <input class="availability-field__input" type="text" value="Mar 18, 2022" aria-label="Check in date" readonly />
     </div>
     <div class="availability-field">
-      <span class="availability-field__icon">📅</span>
+      <img class="availability-field__icon" src="imgs/calendar.png" alt="" aria-hidden="true" />
       <input class="availability-field__input" type="text" value="March 20, 2022" aria-label="Check out date" readonly />
     </div>
     <div class="availability-field" style="border-right:none">
-      <span class="availability-field__icon">👤</span>
+      <img class="availability-field__icon" src="imgs/UserSquare.png" alt="" aria-hidden="true" />
       <input class="availability-field__input" type="text" value="2 adult, 1 room" aria-label="Guests" readonly />
     </div>
     <a href="search-results.html" class="availability-btn">Check Availability</a>
@@ -163,7 +163,7 @@
 
     <!-- Promo card -->
     <div class="promo-card" aria-label="Promotional offer">
-      <div class="promo-card__logo"><span>✈</span> my Dream Place</div>
+      <div class="promo-card__logo"><img class="promo-card__logo-icon" src="imgs/LogoWhite.png" alt="my Dream Place logo" /> my Dream Place</div>
       <div class="promo-card__badge">20% off<br>Use Promotional<br>Coupon Code:</div>
       <div class="promo-card__code">Orlando</div>
       <img class="promo-card__character" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=60" alt="Traveller character illustration" style="border-radius: 50%; object-position: center top;" />
@@ -203,7 +203,7 @@
 <!-- COVID BANNER -->
 <div class="covid-banner" role="alert">
   <div class="covid-banner__inner">
-    <span class="covid-banner__icon">⚠️</span>
+    <img class="covid-banner__icon" src="imgs/dangerCovid.png" alt="Warning" aria-hidden="true" />
     <p>Check the latest COVID-19 restrictions before you travel. <a class="covid-banner__link" href="#">Learn more</a></p>
   </div>
 </div>
@@ -213,7 +213,7 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand"><span class="footer__brand-icon">✈</span> my Dream Place</div>
+        <div class="footer__brand"><img class="footer__brand-icon" src="imgs/LogoWhite.png" alt="my Dream Place logo" aria-hidden="true" /> my Dream Place</div>
         <p class="footer__tagline">Your next goto companion for travel</p>
       </div>
       <div>

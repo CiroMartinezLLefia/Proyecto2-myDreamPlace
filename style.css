@@ -178,8 +178,9 @@ select {
 }
 
 .navbar__brand-icon {
-  font-size: 1.25rem;
-  color: var(--color-primary);
+  height: 24px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar__nav {
@@ -404,8 +405,9 @@ select {
 }
 
 .search-bar__icon {
-  color: var(--color-text-secondary);
-  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -462,8 +464,9 @@ select {
 }
 
 .covid-banner__icon {
-  color: var(--color-warning-icon);
-  font-size: 18px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -762,7 +765,9 @@ select {
 }
 
 .footer__brand-icon {
-  color: var(--color-primary);
+  height: 24px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer__tagline {

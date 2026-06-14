@@ -135,9 +135,9 @@ select {
 }
 
 .header__logo-icon {
-  width: 22px;
-  height: 22px;
-  color: var(--color-primary);
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -191,6 +191,7 @@ select {
 .header__notification-icon {
   width: 22px;
   height: 22px;
+  object-fit: contain;
 }
 
 .header__notification-badge {
@@ -264,7 +265,7 @@ select {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: var(--color-text-primary);
+  object-fit: contain;
 }
 
 .covid-banner__text {
@@ -484,42 +485,11 @@ select {
   display: block;
   width: 16px;
   height: 16px;
+  object-fit: contain;
 }
 
-.star--full {
-  color: var(--color-star);
-}
-
-.star-half {
-  position: relative;
-  display: block;
-  width: 16px;
-  height: 16px;
-}
-
-.star-half__icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-}
-
-.star-half__icon--bg {
-  color: var(--color-star-empty);
-}
-
-.star-half__clip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.star-half__clip .star-half__icon {
-  color: var(--color-star);
+.star--half {
+  opacity: 0.5;
 }
 
 /* ============================================
@@ -557,7 +527,7 @@ select {
 .footer__logo-icon {
   width: 20px;
   height: 20px;
-  color: var(--color-primary);
+  object-fit: contain;
 }
 
 .footer__tagline {
