@@ -34,8 +34,12 @@
 
         <!-- Desktop Actions -->
         <div class="navbar__actions">
-          <button class="navbar__btn--register" type="button">Register</button>
-          <a href="my-trips.html" class="navbar__btn--signin">Sign In</a>
+          <div class="navbar__notif" aria-label="Notifications">
+            <img class="navbar__notif-icon" src="imgs/GrayBell.png" alt="Notifications" />
+          </div>
+          <a href="my-trips.html" aria-label="My trips">
+            <img class="navbar__avatar" src="imgs/pfp.png" alt="User avatar" />
+          </a>
         </div>
 
         <!-- Hamburger (tablet/mobile) -->
@@ -54,26 +58,24 @@
         <a href="#" class="navbar__mobile-menu-link" role="menuitem">Activities</a>
         <a href="#" class="navbar__mobile-menu-link" role="menuitem">About</a>
         <a href="#" class="navbar__mobile-menu-link" role="menuitem">Contact</a>
-        <div class="navbar__mobile-actions">
-          <button class="navbar__btn--register" type="button">Register</button>
-          <a href="my-trips.html" class="navbar__btn--signin">Sign In</a>
-        </div>
       </div>
     </nav>
   </header>
 
   <main>
     <!-- ==================== HERO ==================== -->
-    <section class="hero" aria-label="Hero banner">
-      <img class="hero__img" src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&q=80"
-        alt="Sydney Opera House with city skyline at dusk" />
-      <div class="hero__overlay" aria-hidden="true"></div>
-      <div class="hero__content">
-        <h1 class="hero__title">Enjoy Your Dream Vacation</h1>
-        <p class="hero__subtitle">Plan and book our perfect trip with expert advice, travel tips, destination
-          information and&nbsp; inspiration from us</p>
-      </div>
-    </section>
+    <div class="hero-container container">
+      <section class="hero" aria-label="Hero banner">
+        <img class="hero__img" src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&q=80"
+          alt="Sydney Opera House with city skyline at dusk" />
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 class="hero__title">Enjoy Your Dream Vacation</h1>
+          <p class="hero__subtitle">Plan and book our perfect trip with expert advice, travel tips, destination
+            information and&nbsp; inspiration from us</p>
+        </div>
+      </section>
+    </div>
 
     <!-- ==================== SEARCH BAR ==================== -->
     <div class="search-bar-wrap" role="search" aria-label="Property search">
