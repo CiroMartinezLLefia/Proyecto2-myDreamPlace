@@ -82,7 +82,7 @@
   <aside class="sidebar" aria-label="Search filters">
 
     <!-- Property name search -->
-    <div class="sidebar__panel">
+    <div class="sidebar__search-panel">
       <p class="sidebar__title">Search by property name</p>
       <div class="sidebar__search-wrap">
         <img class="sidebar__search-icon" src="imgs/Lupa.png" alt="" aria-hidden="true" />
@@ -90,52 +90,65 @@
       </div>
     </div>
 
-    <!-- Filter by -->
-    <div class="sidebar__panel">
-      <p class="sidebar__title">Filter by</p>
+    <h2 class="filter-heading">Filter by</h2>
 
-      <p class="sidebar__subtitle">Your budget per day</p>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 0 - $ 200</label><span class="filter-row__count">200</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 200 - $ 500</label><span class="filter-row__count">100</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 500 - $ 1,000</label><span class="filter-row__count">15</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 1,000 - $ 2,000</label><span class="filter-row__count">12</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 2,000 - $ 5,000</label><span class="filter-row__count">230</span></div>
-      <div class="filter-row" style="margin-top:8px">
-        <span style="font-size:.8125rem;color:var(--text-secondary)">Set your own budget</span>
-        <div class="budget-toggle" role="switch" aria-checked="false" tabindex="0"></div>
+    <!-- Budget Card -->
+    <div class="sidebar__card">
+      <div class="sidebar__card-header">Your budget per day</div>
+      <div class="sidebar__card-body">
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 0 - $ 200</label><span class="filter-row__count">200</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 200 - $ 500</label><span class="filter-row__count">100</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 500 - $ 1,000</label><span class="filter-row__count">15</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 1,000 - $ 2,000</label><span class="filter-row__count">12</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 2,000 - $ 5,000</label><span class="filter-row__count">230</span></div>
+        <div class="filter-row" style="margin-top:12px">
+          <span style="font-size:.8125rem;color:var(--text-secondary)">Set your own budget</span>
+          <div class="budget-toggle" role="switch" aria-checked="false" tabindex="0">
+            <div class="budget-toggle__thumb"></div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="sidebar__divider"></div>
-
-      <p class="sidebar__subtitle">Rating</p>
-      <p style="font-size:.75rem;color:var(--text-secondary);margin-bottom:6px">Show only ratings more than</p>
-      <div class="rating-stars">
-        <img class="rating-star" src="imgs/Star.png" aria-label="1 star" />
-        <img class="rating-star" src="imgs/Star.png" aria-label="2 stars" />
-        <img class="rating-star" src="imgs/Star.png" aria-label="3 stars" />
-        <img class="rating-star" src="imgs/Star.png" aria-label="4 stars" />
-        <img class="rating-star" src="imgs/Star.png" aria-label="5 stars" />
+    <!-- Rating Card -->
+    <div class="sidebar__card">
+      <div class="sidebar__card-header">Rating</div>
+      <div class="sidebar__card-body">
+        <p style="font-size:.75rem;color:var(--text-secondary);margin-bottom:8px">Show only ratings more than</p>
+        <div class="rating-options">
+          <button class="rating-btn" type="button">1 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
+          <button class="rating-btn" type="button">2 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
+          <button class="rating-btn" type="button">3 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
+          <button class="rating-btn" type="button">4 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
+          <button class="rating-btn" type="button">5 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
+        </div>
       </div>
+    </div>
 
-      <div class="sidebar__divider"></div>
+    <!-- Popular Filters Card -->
+    <div class="sidebar__card">
+      <div class="sidebar__card-header">Popular Filters</div>
+      <div class="sidebar__card-body">
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Free cancellation</label><span class="filter-row__count">200</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Spa</label><span class="filter-row__count">100</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach front</label><span class="filter-row__count">15</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hot tub/ jacuzzi</label><span class="filter-row__count">12</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Book without credit card</label><span class="filter-row__count">230</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> No prepayment</label><span class="filter-row__count">12</span></div>
+      </div>
+    </div>
 
-      <p class="sidebar__subtitle">Popular Filters</p>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Free cancellation</label><span class="filter-row__count">200</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Spa</label><span class="filter-row__count">100</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach front</label><span class="filter-row__count">15</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hot tub/ jacuzzi</label><span class="filter-row__count">12</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Book without credit card</label><span class="filter-row__count">230</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> No prepayment</label><span class="filter-row__count">12</span></div>
-
-      <div class="sidebar__divider"></div>
-
-      <p class="sidebar__subtitle">Activities</p>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Fishing</label><span class="filter-row__count">200</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hiking</label><span class="filter-row__count">100</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach</label><span class="filter-row__count">15</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Cycling</label><span class="filter-row__count">12</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Sauna</label><span class="filter-row__count">230</span></div>
-      <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Night lights</label><span class="filter-row__count">12</span></div>
+    <!-- Activities Card -->
+    <div class="sidebar__card">
+      <div class="sidebar__card-header">Activities</div>
+      <div class="sidebar__card-body">
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Fishing</label><span class="filter-row__count">200</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Hiking</label><span class="filter-row__count">100</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Beach</label><span class="filter-row__count">15</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Cycling</label><span class="filter-row__count">12</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Sauna</label><span class="filter-row__count">230</span></div>
+        <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> Night lights</label><span class="filter-row__count">12</span></div>
+      </div>
     </div>
 
   </aside>
