@@ -270,14 +270,15 @@ button { cursor: pointer; border: none; background: none; }
 .result-card:hover { box-shadow: var(--shadow-md); }
 .result-card__img-wrap {
   width: 280px;
+  height: 220px;
   padding: 16px;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 .result-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  min-height: 160px;
   border-radius: var(--radius-md);
 }
 .result-card__body { flex: 1; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }

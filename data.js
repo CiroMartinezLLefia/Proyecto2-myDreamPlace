@@ -61,9 +61,9 @@ window.myDreamPlaceData = {
       destinationId: "australia",
       image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80",
       gallery: [
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
-        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
       ],
       rating: 4.5,
       reviews: 1200,
@@ -91,7 +91,7 @@ window.myDreamPlaceData = {
       rooms: [
         {
           id: "twin-multiple",
-          name: "Standard twin bed, Multiple beds",
+          name: "Standard twin ben, Multiple beds",
           image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
           size: "300 sq ft",
           sleeps: "Sleeps 3",
@@ -100,11 +100,11 @@ window.myDreamPlaceData = {
         },
         {
           id: "twin-queen",
-          name: "Standard twin bed, 1 Queen bed",
+          name: "Standard twin ben, 1 Queen bed",
           image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80",
           size: "300 sq ft",
           sleeps: "Sleeps 3",
-          beds: "1 Queen bed",
+          beds: "1 double bed and 1 twin bed",
           pricePerNight: 145
         }
       ],

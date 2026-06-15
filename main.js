@@ -355,6 +355,25 @@ function renderSearchResultsPage() {
   filterAndRender();
 }
 
+// Helper to map facility icons (emojis or paths) to proper image URLs
+function getFacilityIconUrl(iconStr) {
+  const mapping = {
+    "📶": "imgs/Wifi.png",
+    "❄️": "imgs/Ac.png",
+    "🏊": "imgs/Pool.png",
+    "🚗": "imgs/Car.png",
+    "👍": "imgs/Like.png",
+    "💼": "imgs/Briefcase.svg",
+    "🔥": "imgs/Fire.svg",
+    "🍽": "imgs/Restaurant.svg",
+    "⚓": "imgs/Harbor.svg",
+    "🍵": "imgs/Tea.svg",
+    "🍹": "imgs/Cocktail.svg",
+    "🚲": "imgs/Bike.svg"
+  };
+  return mapping[iconStr] || iconStr;
+}
+
 /* ==========================================================================
    PRODUCT DETAIL PAGE (product-detail.html) RENDERER
    ========================================================================== */
@@ -392,22 +411,34 @@ function renderProductDetailPage() {
   const galleryMain = document.getElementById('gallery-main-img');
   const galleryThumbs = document.getElementById('gallery-thumbs');
   if (galleryMain && hotel.gallery && hotel.gallery.length > 0) {
-    // Set initial main image
-    galleryMain.innerHTML = `<img src="${hotel.gallery[0]}" alt="${hotel.name} main photo" />`;
+    // Ensure we have exactly 3 images for the top gallery
+    let galleryList = [...hotel.gallery];
+    const defaultGalleryFallbacks = [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
+    ];
+    while (galleryList.length < 3) {
+      galleryList.push(defaultGalleryFallbacks[galleryList.length]);
+    }
+    galleryList = galleryList.slice(0, 3);
 
-    // Render thumbnails
+    // Set initial main image
+    galleryMain.innerHTML = `<img src="${galleryList[0]}" alt="${hotel.name} main photo" />`;
+
+    // Render exactly 2 thumbnails
     if (galleryThumbs) {
       galleryThumbs.innerHTML = '';
-      hotel.gallery.forEach((imgSrc, idx) => {
+      const thumbs = galleryList.slice(1);
+      thumbs.forEach((imgSrc, idx) => {
         const thumbDiv = document.createElement('div');
-        thumbDiv.className = `gallery__thumb ${idx === 0 ? 'gallery__thumb--active' : ''}`;
+        thumbDiv.className = `gallery__thumb`;
+        thumbDiv.id = `gallery-thumb-${idx + 1}`;
         thumbDiv.innerHTML = `<img src="${imgSrc}" alt="${hotel.name} thumbnail ${idx + 1}" />`;
         
-        // click event to swap image and class
+        // click event to swap main image
         thumbDiv.addEventListener('click', () => {
           galleryMain.querySelector('img').src = imgSrc;
-          galleryThumbs.querySelectorAll('.gallery__thumb').forEach(t => t.classList.remove('gallery__thumb--active'));
-          thumbDiv.classList.add('gallery__thumb--active');
         });
 
         galleryThumbs.appendChild(thumbDiv);
@@ -434,7 +465,12 @@ function renderProductDetailPage() {
     hotel.facilities.forEach(fac => {
       const facDiv = document.createElement('div');
       facDiv.className = 'facility-item';
-      facDiv.innerHTML = `<span class="facility-item__icon">${fac.icon}</span> ${fac.name}`;
+      const resolvedIcon = getFacilityIconUrl(fac.icon);
+      if (resolvedIcon.endsWith('.png') || resolvedIcon.endsWith('.svg')) {
+        facDiv.innerHTML = `<img class="facility-item__icon" src="${resolvedIcon}" alt="" /> ${fac.name}`;
+      } else {
+        facDiv.innerHTML = `<span class="facility-item__icon">${resolvedIcon}</span> ${fac.name}`;
+      }
       facilitiesGrid.appendChild(facDiv);
     });
   }
@@ -442,7 +478,7 @@ function renderProductDetailPage() {
   // 5. Map box
   const mapImg = document.getElementById('map-img');
   if (mapImg) {
-    mapImg.src = `https://maps.googleapis.com/maps/api/staticmap?center=${encodeURIComponent(hotel.location + ',' + hotel.name)}&zoom=13&size=600x400&maptype=roadmap&key=AIzaSyD-PLACEHOLDER`;
+    mapImg.src = `imgs/map.png`;
   }
 
   // 6. Explore Area
@@ -488,9 +524,9 @@ function renderProductDetailPage() {
         <div class="room-card__body">
           <h3 class="room-card__name">${room.name}</h3>
           <div class="room-card__meta">
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">📐</span> ${room.size}</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> ${room.sleeps}</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> ${room.beds}</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Ruler.svg" alt="" /> ${room.size}</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/User.svg" alt="" /> ${room.sleeps}</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Bed.svg" alt="" /> ${room.beds}</div>
           </div>
           <a href="checkout.html?hotel=${hotel.id}&room=${room.id}" class="room-card__reserve-btn">Reserve suite</a>
         </div>

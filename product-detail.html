@@ -27,7 +27,9 @@
           <li><a href="#" class="navbar__nav-link">Contact</a></li>
         </ul>
         <div class="navbar__actions">
-          <div class="navbar__notif"><img class="navbar__notif-icon" src="imgs/WhiteBell.png" alt="Notifications" />
+          <div class="navbar__notif">
+            <img class="navbar__notif-icon" src="imgs/GrayBell.png" alt="Notifications" />
+            <span class="navbar__notif-dot"></span>
           </div>
           <a href="my-trips.html" aria-label="My trips">
             <img class="navbar__avatar" src="imgs/pfp.png" alt="User avatar" />
@@ -52,17 +54,17 @@
   <!-- PHOTO GALLERY -->
   <section class="gallery" aria-label="Property photos" id="gallery-container">
     <div class="gallery__main" id="gallery-main-img">
-      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80"
-        alt="Lakeside Motel kitchen and living area" />
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&q=80"
+        alt="Lakeside Motel living room interior" />
     </div>
     <div class="gallery__thumbs" id="gallery-thumbs">
-      <div class="gallery__thumb">
-        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80"
-          alt="Motel exterior with number 38" />
+      <div class="gallery__thumb" id="gallery-thumb-1">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80"
+          alt="Modern house exterior" />
       </div>
-      <div class="gallery__thumb">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
-          alt="Motel entrance and garden" />
+      <div class="gallery__thumb" id="gallery-thumb-2">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
+          alt="House exterior with pool" />
       </div>
     </div>
   </section>
@@ -114,12 +116,12 @@
         <div class="facilities">
           <h3 class="facilities__title">Top facilities</h3>
           <div class="facilities__grid" id="facilities-grid">
-            <div class="facility-item"><span class="facility-item__icon">📶</span> Free wifi</div>
-            <div class="facility-item"><span class="facility-item__icon">💼</span> Business Services</div>
-            <div class="facility-item"><span class="facility-item__icon">❄️</span> Air Conditioning</div>
-            <div class="facility-item"><span class="facility-item__icon">🏊</span> Swimming pool</div>
-            <div class="facility-item"><span class="facility-item__icon">🚗</span> Parking available</div>
-            <div class="facility-item"><span class="facility-item__icon">👍</span> Top rated in area</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Wifi.png" alt="" /> Free wifi</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Business.svg" alt="" /> Business Services</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Ac.png" alt="" /> Air Conditioning</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Pool.png" alt="" /> Swimming pool</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Car.png" alt="" /> Parking available</div>
+            <div class="facility-item"><img class="facility-item__icon" src="imgs/Like.png" alt="" /> Top rated in area</div>
           </div>
         </div>
       </div>
@@ -129,9 +131,8 @@
     <div>
       <div class="map-box">
         <img class="map-box__img" id="map-img"
-          src="https://maps.googleapis.com/maps/api/staticmap?center=Melbourne,Australia&zoom=13&size=600x400&maptype=roadmap&key=AIzaSyD-PLACEHOLDER"
-          alt="Map of Melbourne area"
-          onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=60'" />
+          src="imgs/map.png"
+          alt="Map of Melbourne area" />
       </div>
       <div class="explore-area">
         <h3 class="explore-area__title">Explore the area</h3>
@@ -182,7 +183,7 @@
         <input class="availability-field__input" type="text" value="March 20, 2022" aria-label="Check out date"
           readonly />
       </div>
-      <div class="availability-field" style="border-right:none">
+      <div class="availability-field">
         <img class="availability-field__icon" src="imgs/UserSquare.png" alt="" aria-hidden="true" />
         <input class="availability-field__input" type="text" value="2 adult, 1 room" aria-label="Guests" readonly />
       </div>
@@ -205,9 +206,9 @@
         <div class="room-card__body">
           <h3 class="room-card__name">Standard twin ben, Multiple beds</h3>
           <div class="room-card__meta">
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">📐</span> 300 sq ft</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> Sleeps 3</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> 1 double bed and 1 twin bed
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Ruler.svg" alt="" /> 300 sq ft</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/User.svg" alt="" /> Sleeps 3</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Bed.svg" alt="" /> 1 double bed and 1 twin bed
             </div>
           </div>
           <a href="checkout.html" class="room-card__reserve-btn">Reserve suite</a>
@@ -221,9 +222,9 @@
         <div class="room-card__body">
           <h3 class="room-card__name">Standard twin ben, 1 Queen bed</h3>
           <div class="room-card__meta">
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">📐</span> 300 sq ft</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> Sleeps 3</div>
-            <div class="room-card__meta-item"><span class="room-card__meta-icon">🛏</span> 1 double bed and 1 twin bed
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Ruler.svg" alt="" /> 300 sq ft</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/User.svg" alt="" /> Sleeps 3</div>
+            <div class="room-card__meta-item"><img class="room-card__meta-icon" src="imgs/Bed.svg" alt="" /> 1 double bed and 1 twin bed
             </div>
           </div>
           <a href="checkout.html" class="room-card__reserve-btn">Reserve suite</a>
@@ -278,7 +279,7 @@
           <ul class="footer__col-links">
             <li><a href="#" class="footer__col-link">Privacy Policy</a></li>
             <li><a href="#" class="footer__col-link">Terms of use</a></li>
-            <li><a href="#" class="footer__col-link">Acessibility</a></li>
+            <li><a href="#" class="footer__col-link">Accessibility</a></li>
             <li><a href="#" class="footer__col-link">Reward system policy</a></li>
           </ul>
         </div>
