@@ -514,3 +514,162 @@ window.myDreamPlaceData = {
     }
   ]
 };
+
+// Generator for massive dummy data to test scale and performance
+(function() {
+  const cities = [
+    { name: "Melbourne", destId: "australia", prefix: "Melbourne" },
+    { name: "Australia", destId: "australia", prefix: "Sydney" },
+    { name: "Japan", destId: "japan", prefix: "Tokyo" },
+    { name: "New Zealand", destId: "new-zealand", prefix: "Auckland" },
+    { name: "Greece", destId: "greece", prefix: "Athens" }
+  ];
+
+  const hotelNames = [
+    "Grand Plaza", "Seaside Resort", "Royal Stay", "Heritage Inn", 
+    "Boutique Haven", "Vista Point", "Blue Lagoon", "Sunset Lodge", 
+    "Urban Oasis", "Central Suite", "Apex View", "Summit Retreat",
+    "Sleek & Chic Stay", "Harmony House", "Serenity Spa & Resort",
+    "The Golden Key", "Emerald Gardens", "Sapphire Sands", "Panorama Hotel",
+    "Tranquil Pines", "Ocean Breeze", "Rustic Charm Inn", "Metro Lux",
+    "The Gallery Suites", "Horizon View"
+  ];
+
+  const types = ["hotel", "resort", "residence", "shared space"];
+
+  const images = [
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",
+    "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80",
+    "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80",
+    "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",
+    "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80",
+    "https://images.unsplash.com/photo-1529290130-4ca3753253ae?w=600&q=80",
+    "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80",
+    "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80",
+    "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80",
+    "https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?w=600&q=80",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",
+    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80",
+    "https://images.unsplash.com/photo-1517840901100-8179e982acb7?w=600&q=80",
+    "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=600&q=80",
+    "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80",
+    "https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&q=80",
+    "https://images.unsplash.com/photo-1606046604972-77cc76aee944?w=600&q=80",
+    "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80",
+    "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=600&q=80",
+    "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80"
+  ];
+
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
+    "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=900&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80",
+    "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=80",
+    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80",
+    "https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=900&q=80",
+    "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=900&q=80",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=900&q=80",
+    "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=900&q=80",
+    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80"
+  ];
+
+  const facilitiesPool = [
+    { icon: "📶", name: "Free wifi" },
+    { icon: "💼", name: "Business Services" },
+    { icon: "❄️", name: "Air Conditioning" },
+    { icon: "🏊", name: "Swimming pool" },
+    { icon: "🚗", name: "Parking available" },
+    { icon: "👍", name: "Top rated in area" }
+  ];
+
+  const roomImages = [
+    "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
+    "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80"
+  ];
+
+  // We generate 1500 hotels
+  const totalToGenerate = 1500;
+  for (let i = 0; i < totalToGenerate; i++) {
+    const city = cities[i % cities.length];
+    const hotelName = `${city.prefix} ${hotelNames[Math.floor(Math.random() * hotelNames.length)]} ${Math.floor(i / cities.length) + 1}`;
+    const type = types[Math.floor(Math.random() * types.length)];
+    
+    // Price range logic to distribute prices across budget classes
+    const budgetIndex = i % 5;
+    let pricePerNight = 120;
+    if (budgetIndex === 0) {
+      pricePerNight = 50 + Math.floor(Math.random() * 150); // 50 to 200
+    } else if (budgetIndex === 1) {
+      pricePerNight = 201 + Math.floor(Math.random() * 299); // 201 to 500
+    } else if (budgetIndex === 2) {
+      pricePerNight = 501 + Math.floor(Math.random() * 499); // 501 to 1000
+    } else if (budgetIndex === 3) {
+      pricePerNight = 1001 + Math.floor(Math.random() * 999); // 1001 to 2000
+    } else {
+      pricePerNight = 2001 + Math.floor(Math.random() * 2999); // 2001 to 5000
+    }
+
+    const priceOriginal = Math.random() < 0.4 ? Math.round(pricePerNight * (1.1 + Math.random() * 0.2)) : null;
+    const discountPercent = priceOriginal ? Math.round(((priceOriginal - pricePerNight) / priceOriginal) * 100) : null;
+    const rating = Math.round((3.0 + Math.random() * 2.0) * 10) / 10;
+    const reviews = 10 + Math.floor(Math.random() * 2490);
+
+    const mainImg = images[Math.floor(Math.random() * images.length)];
+    const gallery = [
+      mainImg,
+      galleryImages[Math.floor(Math.random() * galleryImages.length)],
+      galleryImages[Math.floor(Math.random() * galleryImages.length)]
+    ];
+
+    const generatedHotel = {
+      id: `gen-${city.destId}-${i}`,
+      name: hotelName,
+      location: city.name,
+      destinationId: city.destId,
+      image: mainImg,
+      gallery: gallery,
+      rating: rating,
+      reviews: reviews,
+      address: `${10 + (i % 990)} ${city.prefix} Ave, ${city.name}, ${city.name === "Melbourne" ? "Australia" : city.name}`,
+      overview: [
+        `Welcome to the beautiful ${hotelName}. A premium property located in the heart of ${city.name}.`,
+        "Guests can enjoy free high-speed wifi, access to our wellness center, and a wide array of complimentary amenities."
+      ],
+      facilities: facilitiesPool.slice(0, 3 + Math.floor(Math.random() * 4)),
+      explore: [
+        { name: `${city.prefix} Central Park`, distance: "5 min walk", icon: "imgs/Location.png" },
+        { name: `${city.prefix} Heritage Museum`, distance: "12 min drive", icon: "imgs/Location.png" }
+      ],
+      rooms: [
+        {
+          id: `room-standard-${i}`,
+          name: "Standard Comfort Room",
+          image: roomImages[0],
+          size: "250 sq ft",
+          sleeps: "Sleeps 2",
+          beds: "1 Queen bed",
+          pricePerNight: pricePerNight
+        },
+        {
+          id: `room-deluxe-${i}`,
+          name: "Premium Deluxe Suite",
+          image: roomImages[1],
+          size: "400 sq ft",
+          sleeps: "Sleeps 4",
+          beds: "2 Queen beds",
+          pricePerNight: Math.round(pricePerNight * 1.3)
+        }
+      ],
+      pricePerNightOriginal: priceOriginal,
+      pricePerNight: pricePerNight,
+      promoBadge: Math.random() < 0.25 ? "Special Offer: Book early & save!" : null,
+      discountBadge: discountPercent ? `${discountPercent}% off` : null,
+      popular: false,
+      type: type
+    };
+
+    window.myDreamPlaceData.hotels.push(generatedHotel);
+  }
+})();

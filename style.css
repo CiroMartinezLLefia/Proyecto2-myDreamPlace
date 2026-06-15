@@ -840,7 +840,7 @@ select {
 .footer__bottom {
   border-top: 1px solid var(--color-border);
   padding-top: var(--spacing-6);
-  text-align: center;
+  text-align: right;
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
 }

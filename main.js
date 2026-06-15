@@ -308,6 +308,13 @@ function renderSearchResultsPage() {
       }
 
       filtered.forEach(hotel => {
+        let promoBadgeHTML = '';
+        if (hotel.promoBadge) {
+          const isRestaurant = hotel.promoBadge.toLowerCase().includes('restaurant');
+          const badgeClass = isRestaurant ? 'result-card__restaurant-badge' : 'result-card__promo-badge';
+          promoBadgeHTML = `<span class="${badgeClass}">${hotel.promoBadge}</span>`;
+        }
+
         const card = document.createElement('article');
         card.className = 'result-card';
         card.innerHTML = `
@@ -315,9 +322,6 @@ function renderSearchResultsPage() {
             <img class="result-card__img" src="${hotel.image}" alt="${hotel.name} view" />
           </div>
           <div class="result-card__body">
-            <div class="result-card__badge-row">
-              ${hotel.promoBadge ? `<span class="result-card__promo-badge">${hotel.promoBadge}</span>` : ''}
-            </div>
             <h2 class="result-card__name">${hotel.name}</h2>
             <div class="result-card__stars">
               ${renderStarsHTML(hotel.rating, 'results')}
@@ -328,11 +332,16 @@ function renderSearchResultsPage() {
             <a href="product-detail.html?hotel=${hotel.id}" class="result-card__avail-btn">See availability</a>
           </div>
           <div class="result-card__price-col">
-            <div class="result-card__room-meta">1 room 2 days</div>
-            <div class="result-card__price-wrap">
-              ${hotel.pricePerNightOriginal ? `<div class="result-card__discount-badge" style="margin-bottom:4px">${hotel.discountBadge || ''}</div>` : ''}
-              ${hotel.pricePerNightOriginal ? `<div class="result-card__price-original">$${hotel.pricePerNightOriginal}</div>` : ''}
-              <div class="result-card__price">$${hotel.pricePerNight}</div>
+            <div class="result-card__price-top">
+              ${promoBadgeHTML}
+            </div>
+            <div class="result-card__price-bottom">
+              ${hotel.pricePerNightOriginal ? `<span class="result-card__discount-badge">${hotel.discountBadge || ''}</span>` : ''}
+              <div class="result-card__room-meta">1 room 2 days</div>
+              <div class="result-card__price-wrap">
+                ${hotel.pricePerNightOriginal ? `<span class="result-card__price-original">$${hotel.pricePerNightOriginal}</span>` : ''}
+                <span class="result-card__price">$${hotel.pricePerNight}</span>
+              </div>
               <div class="result-card__price-note">Includes taxes and fees</div>
             </div>
           </div>
@@ -463,11 +472,10 @@ function renderProductDetailPage() {
     const promoCard = document.createElement('div');
     promoCard.className = 'promo-card';
     promoCard.setAttribute('aria-label', 'Promotional offer');
+    promoCard.style.padding = '0';
+    promoCard.style.background = 'none';
     promoCard.innerHTML = `
-      <div class="promo-card__logo"><img class="promo-card__logo-icon" src="imgs/LogoWhite.png" alt="my Dream Place logo" /> my Dream Place</div>
-      <div class="promo-card__badge">20% off<br>Use Promotional<br>Coupon Code:</div>
-      <div class="promo-card__code">Orlando</div>
-      <img class="promo-card__character" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=60" alt="Traveller character illustration" style="border-radius: 50%; object-position: center top;" />
+      <img src="imgs/promo.png" alt="Promotional offer: 20% off. Use Promotional Coupon Code: Orlando" style="width: 100%; height: 100%; object-fit: cover;" />
     `;
     roomsGrid.appendChild(promoCard);
 
