@@ -44,15 +44,17 @@
 </header>
 
 <!-- PHOTO GALLERY -->
-<section class="gallery" aria-label="Property photos">
-  <div class="gallery__main">
+<section class="gallery" aria-label="Property photos" id="gallery-container">
+  <div class="gallery__main" id="gallery-main-img">
     <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" alt="Lakeside Motel kitchen and living area" />
   </div>
-  <div class="gallery__thumb">
-    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Motel exterior with number 38" />
-  </div>
-  <div class="gallery__thumb">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Motel entrance and garden" />
+  <div class="gallery__thumbs" id="gallery-thumbs">
+    <div class="gallery__thumb">
+      <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Motel exterior with number 38" />
+    </div>
+    <div class="gallery__thumb">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Motel entrance and garden" />
+    </div>
   </div>
 </section>
 
@@ -72,28 +74,29 @@
   <div>
     <!-- Hotel header -->
     <div>
-      <h1 class="hotel-header__name">Lakeside Motel Warefront</h1>
-      <div class="hotel-header__stars">
+      <h1 class="hotel-header__name" id="hotel-name">Lakeside Motel Warefront</h1>
+      <div class="hotel-header__stars" id="hotel-stars">
         <img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" src="imgs/Star.png" alt="" /><img class="hotel-header__star" style="opacity:.5" src="imgs/Star.png" alt="" />
         <span class="hotel-header__rating">4.5 (1200 Reviews)</span>
       </div>
-      <div class="hotel-header__address">
+      <div class="hotel-header__address" id="hotel-address">
         <img class="hotel-header__address-icon" src="imgs/LocationBlue.png" alt="" aria-hidden="true" />
         Lorem ipsum road, Tantruim-2322, Melbourne, Australia
       </div>
     </div>
 
-    <!-- Overview -->
     <div class="overview-box">
       <h2 class="overview-box__title">Overview</h2>
-      <p class="overview-box__text">Featuring free WiFi throughout the property, Lakeside Motel Warefront offers accommodations in Lakes Entrance, 19 mi from Bairnsdale. Free private parking is available on site.</p>
-      <p class="overview-box__text">Each room at this motel is air conditioned and comes with a flat-screen TV. You will find a kettle, toaster and a microwave in the room. Each room is fitted with a private bathroom. Guests have access to barbecue facilities and a lovely large lawn area. Metung is 6.8 mi from Lakeside Motel Warefront, while Paynesville is 14 mi from the property.</p>
-      <p class="overview-box__text">Couples in particular like the location – they rated it 9.2 for a two-person trip.</p>
+      <div id="overview-paragraphs">
+        <p class="overview-box__text">Featuring free WiFi throughout the property, Lakeside Motel Warefront offers accommodations in Lakes Entrance, 19 mi from Bairnsdale. Free private parking is available on site.</p>
+        <p class="overview-box__text">Each room at this motel is air conditioned and comes with a flat-screen TV. You will find a kettle, toaster and a microwave in the room. Each room is fitted with a private bathroom. Guests have access to barbecue facilities and a lovely large lawn area. Metung is 6.8 mi from Lakeside Motel Warefront, while Paynesville is 14 mi from the property.</p>
+        <p class="overview-box__text">Couples in particular like the location – they rated it 9.2 for a two-person trip.</p>
+      </div>
 
       <!-- Top Facilities -->
       <div class="facilities">
         <h3 class="facilities__title">Top facilities</h3>
-        <div class="facilities__grid">
+        <div class="facilities__grid" id="facilities-grid">
           <div class="facility-item"><span class="facility-item__icon">📶</span> Free wifi</div>
           <div class="facility-item"><span class="facility-item__icon">💼</span> Business Services</div>
           <div class="facility-item"><span class="facility-item__icon">❄️</span> Air Conditioning</div>
@@ -108,29 +111,31 @@
   <!-- RIGHT COLUMN -->
   <div>
     <div class="map-box">
-      <img class="map-box__img" src="https://maps.googleapis.com/maps/api/staticmap?center=Melbourne,Australia&zoom=13&size=600x400&maptype=roadmap&key=AIzaSyD-PLACEHOLDER" alt="Map of Melbourne area" onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=60'" />
+      <img class="map-box__img" id="map-img" src="https://maps.googleapis.com/maps/api/staticmap?center=Melbourne,Australia&zoom=13&size=600x400&maptype=roadmap&key=AIzaSyD-PLACEHOLDER" alt="Map of Melbourne area" onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=60'" />
     </div>
     <div class="explore-area">
       <h3 class="explore-area__title">Explore the area</h3>
-      <div class="explore-row">
-        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/LogoBlue.png" alt="" aria-hidden="true" /> Hotel Penselvenyia</div>
-        <div class="explore-row__dist">2 min drive</div>
-      </div>
-      <div class="explore-row">
-        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Travis Bakery store house</div>
-        <div class="explore-row__dist">10 min drive</div>
-      </div>
-      <div class="explore-row">
-        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Olivia Johnson Garden</div>
-        <div class="explore-row__dist">15 min drive</div>
-      </div>
-      <div class="explore-row">
-        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Norman Opera Circus</div>
-        <div class="explore-row__dist">18 min drive</div>
-      </div>
-      <div class="explore-row">
-        <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Rockdeset hotel</div>
-        <div class="explore-row__dist">32 min drive</div>
+      <div id="explore-grid">
+        <div class="explore-row">
+          <div class="explore-row__place"><img class="explore-row__icon" src="imgs/LogoBlue.png" alt="" aria-hidden="true" /> Hotel Penselvenyia</div>
+          <div class="explore-row__dist">2 min drive</div>
+        </div>
+        <div class="explore-row">
+          <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Travis Bakery store house</div>
+          <div class="explore-row__dist">10 min drive</div>
+        </div>
+        <div class="explore-row">
+          <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Olivia Johnson Garden</div>
+          <div class="explore-row__dist">15 min drive</div>
+        </div>
+        <div class="explore-row">
+          <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Norman Opera Circus</div>
+          <div class="explore-row__dist">18 min drive</div>
+        </div>
+        <div class="explore-row">
+          <div class="explore-row__place"><img class="explore-row__icon" src="imgs/Location.png" alt="" aria-hidden="true" /> Rockdeset hotel</div>
+          <div class="explore-row__dist">32 min drive</div>
+        </div>
       </div>
     </div>
   </div>
@@ -159,7 +164,7 @@
   </div>
 
   <!-- Rooms grid -->
-  <div class="rooms-grid">
+  <div class="rooms-grid" id="rooms-grid">
 
     <!-- Promo card -->
     <div class="promo-card" aria-label="Promotional offer">
@@ -237,6 +242,8 @@
   </div>
 </footer>
 
+<script src="data.js"></script>
+<script src="main.js"></script>
 <script src="product-detail.js"></script>
 </body>
 </html>

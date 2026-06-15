@@ -354,7 +354,6 @@ select {
   height: 420px;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  border: 2px solid var(--color-primary);
 }
 
 .hero__img {

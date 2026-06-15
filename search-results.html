@@ -86,7 +86,7 @@
       <p class="sidebar__title">Search by property name</p>
       <div class="sidebar__search-wrap">
         <img class="sidebar__search-icon" src="imgs/Lupa.png" alt="" aria-hidden="true" />
-        <input class="sidebar__search-input" type="text" placeholder="eg. Beach westpalm" aria-label="Search by property name" />
+        <input class="sidebar__search-input" type="text" placeholder="eg. Beach westpalm" aria-label="Search by property name" id="name-filter" />
       </div>
     </div>
 
@@ -95,7 +95,7 @@
     <!-- Budget Card -->
     <div class="sidebar__card">
       <div class="sidebar__card-header">Your budget per day</div>
-      <div class="sidebar__card-body">
+      <div class="sidebar__card-body" id="budget-filters">
         <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 0 - $ 200</label><span class="filter-row__count">200</span></div>
         <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 200 - $ 500</label><span class="filter-row__count">100</span></div>
         <div class="filter-row"><label class="filter-row__label"><input class="filter-row__checkbox" type="checkbox" /> $ 500 - $ 1,000</label><span class="filter-row__count">15</span></div>
@@ -115,7 +115,7 @@
       <div class="sidebar__card-header">Rating</div>
       <div class="sidebar__card-body">
         <p style="font-size:.75rem;color:var(--text-secondary);margin-bottom:8px">Show only ratings more than</p>
-        <div class="rating-options">
+        <div class="rating-options" id="rating-filters">
           <button class="rating-btn" type="button">1 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
           <button class="rating-btn" type="button">2 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
           <button class="rating-btn" type="button">3 <img class="rating-star" src="imgs/Star.png" alt="" /></button>
@@ -156,10 +156,10 @@
   <!-- RESULTS -->
   <main aria-label="Search results">
     <div class="results__header">
-      <h1 class="results__title">Melbourne : 2,582 search results found</h1>
+      <h1 class="results__title" id="results-title-text">Melbourne : 2,582 search results found</h1>
       <div class="results__sort">
         Sort by
-        <select class="results__sort-select" aria-label="Sort results">
+        <select class="results__sort-select" aria-label="Sort results" id="sort-select">
           <option>Recommended</option>
           <option>Price: Low to High</option>
           <option>Price: High to Low</option>
@@ -169,225 +169,9 @@
     </div>
 
     <!-- Filter Tabs -->
-    <div class="filter-tabs" role="tablist">
-      <button class="filter-tab active" role="tab" aria-selected="true">Our top picks</button>
-      <button class="filter-tab" role="tab" aria-selected="false">Hotel and apartments</button>
-      <button class="filter-tab" role="tab" aria-selected="false">Residence</button>
-      <button class="filter-tab" role="tab" aria-selected="false">Resort</button>
-      <button class="filter-tab" role="tab" aria-selected="false">Shared Space</button>
-    </div>
+    <div class="filter-tabs" role="tablist" id="type-tabs"></div>
 
-    <!-- Result 1 – Lakeside Motel -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Lakeside Motel Warefront exterior" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row">
-          <span class="result-card__promo-badge">Book now and receive 15% off</span>
-        </div>
-        <h2 class="result-card__name">Lakeside Motel Warefront</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__discount-badge" style="margin-bottom:4px">5% off</div>
-          <div class="result-card__price-original">$160</div>
-          <div class="result-card__price">$130</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 2 – Julia Dens Resort -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=400&q=80" alt="Julia Dens Resort exterior" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row"></div>
-        <h2 class="result-card__name">Julia Dens Resort</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__price">$240</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 3 – Aghnim Scepter Hotel -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=400&q=80" alt="Aghnim Scepter Hotel room" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row">
-          <span class="result-card__restaurant-badge">Receive 30% discount on a restaurant</span>
-        </div>
-        <h2 class="result-card__name">Aghnim Scepter Hotel</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__price">$300</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 4 – Marineford Hotel -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=400&q=80" alt="Marineford Hotel exterior" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row"></div>
-        <h2 class="result-card__name">Marineford Hotel</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__price">$120</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 5 – Shanghai Open House -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&q=80" alt="Shanghai Open House bedroom" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row"></div>
-        <h2 class="result-card__name">Shanghai Open House</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__price">$145</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 6 – Ocean Waves Resort -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Ocean Waves Resort exterior" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row"></div>
-        <h2 class="result-card__name">Ocean Waves Resort</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__price">$310</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 7 – Maimi City Frontier -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&q=80" alt="Maimi City frontier room" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row">
-          <span class="result-card__restaurant-badge">Receive 30% discount on a restaurant</span>
-        </div>
-        <h2 class="result-card__name">Maimi City frontier</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__discount-badge" style="margin-bottom:4px">15% off</div>
-          <div class="result-card__price-original">$200</div>
-          <div class="result-card__price">$190</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Result 8 – Lakeside Motel 2 -->
-    <article class="result-card">
-      <div class="result-card__img-wrap">
-        <img class="result-card__img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&q=80" alt="Lakeside Motel Warefront room" />
-      </div>
-      <div class="result-card__body">
-        <div class="result-card__badge-row"></div>
-        <h2 class="result-card__name">Lakeside Motel Warefront</h2>
-        <div class="result-card__stars">
-          <img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-filled" src="imgs/Star.png" alt="" /><img class="result-card__star star-half" src="imgs/Star.png" alt="" />
-          <span class="result-card__rating-text">4.5 (1200 Reviews)</span>
-        </div>
-        <p class="result-card__desc">Live a little and celebrate with champagne</p>
-        <p class="result-card__desc">Reats include a glass of French champagne, parking and a late checkout. Gym included. Flexible cancellation applies</p>
-        <a href="product-detail.html" class="result-card__avail-btn">See availability</a>
-      </div>
-      <div class="result-card__price-col">
-        <div class="result-card__room-meta">1 room 2 days</div>
-        <div class="result-card__price-wrap">
-          <div class="result-card__discount-badge" style="margin-bottom:4px">15% off</div>
-          <div class="result-card__price-original">$320</div>
-          <div class="result-card__price">$300</div>
-          <div class="result-card__price-note">Includes taxes and fees</div>
-        </div>
-      </div>
-    </article>
+    <div id="results-container"></div>
 
     <!-- Load more -->
     <div class="load-more">
@@ -433,6 +217,8 @@
   </div>
 </footer>
 
+<script src="data.js"></script>
+<script src="main.js"></script>
 <script src="search-results.js"></script>
 </body>
 </html>

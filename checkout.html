@@ -42,7 +42,7 @@
           <section class="form-card" aria-labelledby="room-heading">
             <div class="form-card__header">
               <img class="form-card__header-icon" src="imgs/UserSquare.png" alt="" aria-hidden="true" style="filter: brightness(0) invert(1);" />
-              <h2 id="room-heading">Room 1<span class="form-card__subtitle">2 adults, 1 double bed and 1 twin bed, Non-smoking</span></h2>
+              <h2 id="room-heading">Room 1<span class="form-card__subtitle" id="room-details-subtitle">2 adults, 1 double bed and 1 twin bed, Non-smoking</span></h2>
             </div>
             <div class="form-card__body">
               <div class="form-row">
@@ -187,7 +187,7 @@
 
               <p class="info-card__terms">By clicking the button below, I acknowledge that I have reviewed the <a href="#">Privacy Statement</a> and have reviewd and accept the <a href="#">Rules and Restrictions</a> and <a href="#">Terms of Use</a>.</p>
 
-              <a href="my-trips.html" class="btn btn--primary">Complete Booking</a>
+              <a href="#" class="btn btn--primary" id="checkout-complete-btn">Complete Booking</a>
 
               <p class="info-card__secure">
                 <img class="info-card__secure-icon" src="imgs/Lock.png" alt="" aria-hidden="true" />
@@ -199,24 +199,24 @@
         </div>
 
         <aside class="checkout__sidebar">
-          <a href="product-detail.html" class="hotel-summary">
-            <img class="hotel-summary__image" src="https://picsum.photos/seed/lakeside-motel/600/450" alt="Lakeside Motel Waterfront exterior view">
+          <a href="product-detail.html" class="hotel-summary" id="checkout-summary-link">
+            <img class="hotel-summary__image" id="checkout-hotel-image" src="https://picsum.photos/seed/lakeside-motel/600/450" alt="Lakeside Motel Waterfront exterior view">
             <div class="hotel-summary__body">
-              <h3 class="hotel-summary__title">Lakeside Motel Warefront</h3>
+              <h3 class="hotel-summary__title" id="checkout-hotel-title">Lakeside Motel Warefront</h3>
               <div class="hotel-summary__rating">
-                <div class="trip-card__stars" role="img" aria-label="Rating: 4.5 out of 5 stars">
+                <div class="trip-card__stars" role="img" aria-label="Rating: 4.5 out of 5 stars" id="checkout-hotel-stars">
                   <img class="star star--full" src="imgs/Star.png" alt="" />
                   <img class="star star--full" src="imgs/Star.png" alt="" />
                   <img class="star star--full" src="imgs/Star.png" alt="" />
                   <img class="star star--full" src="imgs/Star.png" alt="" />
                   <img class="star star--half" src="imgs/Star.png" alt="" />
                 </div>
-                <span class="hotel-summary__rating-text">4.5 (1200 Reviews)</span>
+                <span class="hotel-summary__rating-text" id="checkout-hotel-rating">4.5 (1200 Reviews)</span>
               </div>
               <p class="hotel-summary__refund">Non refundable</p>
-              <p class="hotel-summary__date">Check in: Sunday, March 18, 2022</p>
-              <p class="hotel-summary__date">Check out: Tuesday, March 20, 2022</p>
-              <p class="hotel-summary__nights">2 night stay</p>
+              <p class="hotel-summary__date" id="checkout-checkin-date">Check in: Sunday, March 18, 2022</p>
+              <p class="hotel-summary__date" id="checkout-checkout-date">Check out: Tuesday, March 20, 2022</p>
+              <p class="hotel-summary__nights" id="checkout-nights-stay">2 night stay</p>
             </div>
           </a>
 
@@ -224,29 +224,34 @@
             <div class="price-details__header">
               <h3 id="price-heading">Price details</h3>
             </div>
-            <div class="price-details__body">
+            <div class="price-details__body" id="checkout-price-body">
               <div class="price-row">
-                <span>1 room x 2 nights</span>
-                <span>$260</span>
+                <span id="checkout-price-room-label">1 room x 2 nights</span>
+                <span id="checkout-price-room-value">$260</span>
+              </div>
+              <div class="price-row" id="checkout-discount-row" style="display:none; color: #10B981">
+                <span>Coupon discount (20% off)</span>
+                <span id="checkout-price-discount-value">-$52</span>
               </div>
               <div class="price-row">
                 <span>Taxes and fees</span>
-                <span>$45</span>
+                <span id="checkout-price-taxes-value">$45</span>
               </div>
               <hr class="price-details__divider">
               <div class="price-row price-row--total">
                 <span>Total</span>
-                <span>$305</span>
+                <span id="checkout-price-total-value">$305</span>
               </div>
 
-              <a href="#" class="price-details__coupon-link">Have a coupon code?</a>
+              <a href="#" class="price-details__coupon-link" id="coupon-toggle">Have a coupon code?</a>
 
-              <div class="coupon-field">
+              <div class="coupon-field" id="coupon-container">
                 <label class="coupon-field__label" for="coupon-code">Coupon code</label>
                 <div class="coupon-field__group">
                   <input class="coupon-field__input" type="text" id="coupon-code" name="coupon-code" placeholder="Enter code">
-                  <button class="coupon-field__button" type="button">Apply</button>
+                  <button class="coupon-field__button" id="coupon-apply-btn" type="button">Apply</button>
                 </div>
+                <p id="coupon-msg" style="font-size: 0.75rem; margin-top: 4px; display: none;"></p>
               </div>
             </div>
           </section>
@@ -255,6 +260,8 @@
     </div>
   </main>
 
+  <script src="data.js"></script>
+  <script src="main.js"></script>
   <script src="checkout.js"></script>
 </body>
 </html>

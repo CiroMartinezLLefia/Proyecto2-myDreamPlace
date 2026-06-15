@@ -46,45 +46,11 @@
     <div class="trips__container">
       <h1 class="trips__title">My trips</h1>
 
-      <article class="trip-card">
-        <img class="trip-card__image" src="https://picsum.photos/seed/lakeside-motel/600/450" alt="Lakeside Motel Waterfront exterior view">
-
-        <div class="trip-card__content">
-          <div class="trip-card__details">
-            <h2 class="trip-card__title">Lakeside Motel Warefront</h2>
-
-            <div class="trip-card__rating">
-              <div class="trip-card__stars" role="img" aria-label="Rating: 4.5 out of 5 stars">
-                <img class="star star--full" src="imgs/Star.png" alt="" />
-                <img class="star star--full" src="imgs/Star.png" alt="" />
-                <img class="star star--full" src="imgs/Star.png" alt="" />
-                <img class="star star--full" src="imgs/Star.png" alt="" />
-                <img class="star star--half" src="imgs/Star.png" alt="" />
-              </div>
-              <span class="trip-card__rating-text">4.5 (1200 Reviews)</span>
-            </div>
-
-            <p class="trip-card__refund">Non refundable</p>
-            <p class="trip-card__date">Check in: Sunday, March 18, 2022</p>
-            <p class="trip-card__date">Check out: Tuesday, March 20, 2022</p>
-            <p class="trip-card__nights">2 night stay</p>
-          </div>
-
-          <div class="trip-card__price-section">
-            <p class="trip-card__room-info">1 room 2 days</p>
-            <p class="trip-card__price">
-              <span class="trip-card__price-old">$150</span>
-              <span class="trip-card__price-new">$130</span>
-            </p>
-            <p class="trip-card__taxes">Includes taxes and fees</p>
-            <a href="product-detail.html" class="trip-card__button">View trip details</a>
-          </div>
-        </div>
-      </article>
+      <div id="booked-trips-container"></div>
 
       <section class="history">
         <h2 class="history__title">Based on your history</h2>
-        <div class="history__grid">
+        <div class="history__grid" id="history-destinations-grid">
           <a href="search-results.html" class="history__card-link">
             <article class="history__card">
               <img class="history__image" src="https://picsum.photos/seed/australia-sydney/400/400" alt="Aerial view of Sydney harbour, Australia">
@@ -184,6 +150,8 @@
     </div>
   </footer>
 
+  <script src="data.js"></script>
+  <script src="main.js"></script>
   <script src="my-trips.js"></script>
 </body>
 </html>
